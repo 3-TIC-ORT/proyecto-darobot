@@ -5,3 +5,4 @@ Agustin Samuel Itkin
 David Navarro Nahmod
 Martín Berenstein
 Figma: https://www.figma.com/design/vNndzaFeP93lpi5GsqoHzk/Sin-t%C3%ADtulo?node-id=0-1&t=vqdP548R3ZK0yeJB-1 
+Ideas del proyecto concretas: https://docs.google.com/document/d/1RNo0fY_qaEOfm3Rrq7Zs2LEEvRiSbHccW6KaHufgAX8/edit?usp=sharing
