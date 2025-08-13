@@ -4,6 +4,7 @@ h1 {
     font-family: 'Inter';
     text-align: center;
     font-size: 40px;
+    text-decoration: underline
 }
 
 .contenedor-botones {
@@ -13,3 +14,23 @@ h1 {
     gap: 7px;
     margin-top: 25px;
 }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; 
+}
+
+body {
+    background-image: url("c:/Users/49703247/Downloads/modern-clean-white-background-free-vector 1.png"); /* o tu ruta */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+ 
+    .imagen-centro {
+        display: block;
+        margin: 20px auto;
+    }
