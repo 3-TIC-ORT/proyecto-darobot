@@ -23,7 +23,7 @@ html, body {
 }
 
 body {
-    background-image: url("c:/Users/49703247/Downloads/modern-clean-white-background-free-vector 1.png"); /* o tu ruta */
+    background-image: url("modern-clean-white-background-free-vector\ 1.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
