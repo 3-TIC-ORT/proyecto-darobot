@@ -1,0 +1,21 @@
+{
+  "name": "proyecto-darobot",
+  "version": "1.0.0",
+  "description": "proyecto-darobot created by GitHub Classroom\r Ezequiel Zwiebel \r Agustin Samuel Itkin\r David Navarro Nahmod\r Martín Berenstein\r Figma: https://www.figma.com/design/vNndzaFeP93lpi5GsqoHzk/Sin-t%C3%ADtulo?node-id=0-1&t=vqdP548R3ZK0yeJB-1 \r Ideas del proyecto concretas: https://docs.google.com/document/d/1TJyEO5zxW5-44KVytO7yJkivW7BOOwqq6lyjDcpD1kQ/edit?usp=sharing\r Linea de tiempo: https://www.canva.com/design/DAGvTj5776c/thXZtiuXYmi0jkuCaW76nw/edit?utm_content=DAGvTj5776c&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3-TIC-ORT/proyecto-darobot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/3-TIC-ORT/proyecto-darobot/issues"
+  },
+  "homepage": "https://github.com/3-TIC-ORT/proyecto-darobot#readme",
+  "type": "module"
+}
