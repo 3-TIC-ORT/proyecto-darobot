@@ -1,0 +1,11 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#chartContainer {
+    height: 600px;   /* 100% del alto de la ventana */
+    width: 1300px;    /* 100% del ancho de la ventana */
+}
