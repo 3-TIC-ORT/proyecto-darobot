@@ -17,5 +17,8 @@
     "url": "https://github.com/3-TIC-ORT/proyecto-darobot/issues"
   },
   "homepage": "https://github.com/3-TIC-ORT/proyecto-darobot#readme",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "serialport": "^13.0.0"
+  }
 }
