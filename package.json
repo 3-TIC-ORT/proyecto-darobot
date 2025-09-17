@@ -19,6 +19,7 @@
   "homepage": "https://github.com/3-TIC-ORT/proyecto-darobot#readme",
   "type": "module",
   "dependencies": {
-    "serialport": "^13.0.0"
+    "serialport": "^13.0.0",
+    "soquetic": "^1.4.1"
   }
 }
