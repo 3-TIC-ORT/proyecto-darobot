@@ -46,76 +46,80 @@ let sonido = [
 ]
 
 window.onload = function () {
-  const select = document.getElementById("selectordeunidades");
-  const container = document.getElementById("chartContainer");
-  let chart;
-  const socket = io("http://localhost:3000");
+    const select = document.getElementById("selectordeunidades");
+    const container = document.getElementById("chartContainer");
+    let chart;
+    const socket = io("http://localhost:3000");
 
-  select.addEventListener("change", function () {
-      const opcion = select.value;
-      if (opcion === "vacio") {
-          container.innerHTML = "";
-          return;
-      }
-      container.innerHTML = "";
-      chart = new CanvasJS.Chart("chartContainer", {
-          animationEnabled: true,
-          theme: "light2",
-          title: { text: "Datos de " + opcion },
-          data: []
-      });
+    const chartBaseConfig = (titulo) => ({
+        animationEnabled: true,
+        theme: "light2",
+        title: { text: titulo, fontSize: 20 },
+        axisX: { labelFontSize: 14, labelFontColor: "#333" },
+        axisY: { labelFontSize: 14, labelFontColor: "#333" },
+        toolTip: { shared: true },
+        legend: { fontSize: 14, cursor: "pointer" },
+        data: []
+    });
 
-      if (opcion === "Temperatura") {
-          chart.options.data = [{ type: "line", dataPoints: temperaturas }];
-          socket.on("sensorDataTemperatura", (obj) => {
-              chart.options.data[0].dataPoints.push(obj);
-              if (chart.options.data[0].dataPoints.length > 20) {
-                  chart.options.data[0].dataPoints.shift();
-              }
-              chart.render();
-          });
-      }
+    select.addEventListener("change", function () {
+        const opcion = select.value;
+        if (opcion === "vacio") {
+            container.innerHTML = "";
+            return;
+        }
+        container.innerHTML = "";
+        chart = new CanvasJS.Chart("chartContainer", chartBaseConfig("Datos de " + opcion));
+        let series = [];
 
-      if (opcion === "Luz") {
-          chart.options.data = [{ type: "column", dataPoints: luz }];
-          socket.on("sensorDataLuz", (obj) => {
-              chart.options.data[0].dataPoints.push(obj);
-              chart.render();
-          });
-      }
+        if (opcion === "Temperatura") {
+            series = [{ type: "line", color: "#007bff", dataPoints: temperaturas }];
+            socket.off("sensorDataTemperatura");
+            socket.on("sensorDataTemperatura", (obj) => {
+                series[0].dataPoints.push(obj);
+                if (series[0].dataPoints.length > 20) series[0].dataPoints.shift();
+                chart.render();
+            });
+        }
 
-      if (opcion === "Humedad") {
-          chart.options.data = [{ type: "line", dataPoints: humedad }];
-          socket.on("sensorDataHumedad", (obj) => {
-              chart.options.data[0].dataPoints.push(obj);
-              if (chart.options.data[0].dataPoints.length > 20) {
-                  chart.options.data[0].dataPoints.shift();
-              }
-              chart.render();
-          });
-      }
+        if (opcion === "Luz") {
+            series = [{ type: "line", color: "#28a745", dataPoints: luz }];
+            socket.off("sensorDataLuz");
+            socket.on("sensorDataLuz", (obj) => {
+                series[0].dataPoints.push(obj);
+                chart.render();
+            });
+        }
 
-      if (opcion === "Presion") {
-          chart.options.data = [{ type: "area", dataPoints: presion }];
-          socket.on("sensorDataPresion", (obj) => {
-              chart.options.data[0].dataPoints.push(obj);
-              chart.render();
-          });
-      }
+        if (opcion === "Humedad") {
+            series = [{ type: "line", color: "#17a2b8", dataPoints: humedad }];
+            socket.off("sensorDataHumedad");
+            socket.on("sensorDataHumedad", (obj) => {
+                series[0].dataPoints.push(obj);
+                if (series[0].dataPoints.length > 20) series[0].dataPoints.shift();
+                chart.render();
+            });
+        }
 
-      if (opcion === "Sonido") {
-          chart.options.data = [{
-              type: "pie",
-              showInLegend: true,
-              legendText: "{label}",
-              dataPoints: sonido
-          }];
-          socket.on("sensorDataSonido", (obj) => {
-              chart.options.data[0].dataPoints.push(obj);
-              chart.render();
-          });
-      }
+        if (opcion === "Presion") {
+            series = [{ type: "line", color: "#ffc107", dataPoints: presion }];
+            socket.off("sensorDataPresion");
+            socket.on("sensorDataPresion", (obj) => {
+                series[0].dataPoints.push(obj);
+                chart.render();
+            });
+        }
 
-      chart.render();
-  });
+        if (opcion === "Sonido") {
+            series = [{ type: "line", color: "#dc3545", dataPoints: sonido }];
+            socket.off("sensorDataSonido");
+            socket.on("sensorDataSonido", (obj) => {
+                series[0].dataPoints.push(obj);
+                chart.render();
+            });
+        }
+
+        chart.options.data = series;
+        chart.render();
+    });
 }

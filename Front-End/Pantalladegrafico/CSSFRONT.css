@@ -6,6 +6,13 @@ html, body {
 }
 
 #chartContainer {
-    height: 600px;   /* 100% del alto de la ventana */
-    width: 1300px;    /* 100% del ancho de la ventana */
+    height: 600px;  
+    width: 1300px;   
 }
+
+body{
+    background-image: url("modern-clean-white-background-free-vector 1.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+} 
