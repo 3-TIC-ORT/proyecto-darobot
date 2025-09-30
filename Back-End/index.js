@@ -1,16 +1,13 @@
-import { subscribeGETEvent, subscribePOSTEvent, realTimeEvent, startServer } from "soquetic";
-import { SerialPort } from "serialport";
-import {ReadlineParser} from "@serialport/parser-readline"
+import { SerialPort } from 'serialport'
 
-
-let port = new SerialPort({
-    path: "COM4", 
-    baudRate: 9600, // Debe coincidir con el dispositivo
-  });
-
+// Create a port
+const port = new SerialPort({
+  path: 'COM5',
+  baudRate: 9600,
+})
  
 port.on("open",()=>{
-    console.log("HOla")
+    console.log("Hola")
 })
 
 function enviarAArduino(mandar){
@@ -19,6 +16,6 @@ function enviarAArduino(mandar){
 } // Enviar info al arduino
 
 enviarAArduino(1)
-const lectura = port.pipe(new ReadlineParser()) //Leer info de arduino
+const lectura = port.pipe(new ReadlineParser({ delimiter: '\r\n' })) //Leer info de arduino
+lectura.on('data', console.log);
 
-startServer();
