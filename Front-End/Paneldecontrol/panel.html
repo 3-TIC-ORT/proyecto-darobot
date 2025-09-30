@@ -1,23 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="panel.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Control</title>
+  <link rel="stylesheet" href="panel.css">
+  <script src="panel.js" defer></script>
 </head>
 <body>
-    <button id="volver">Volver a Inicio</button>
-    <h1>Panel de control</h1>
-    <h2>En esta seccion vas a poder controlar a tu robot, elegir para donde se mueve y cuando medir.</h2>
-    <button>Empezar a medir</button>
-    <select name="Selector de Unidades" id="selectordeunidades">
-        <option value="vacio"> </option>
-        <option value="Temperatura">Sensor de Temperatura</option>
-        <option value="Luz">Sensor de Luz</option>
-        <option value="Humedad">Sensor de Humedad</option>
-        <option value="Presion">Sensor de Presion</option>
-        <option value="Sonido">Sensor de Sonido</option>
-      </select>
+  <div class="container">
+
+    <!-- Header con título y menú -->
+    <header class="header">
+      <div class="titulo">
+        <h1>Panel de control</h1>
+        <h2>En esta sección vas a poder controlar a tu robot, elegir para dónde se mueve y cuándo medir.</h2>
+      </div>
+      <div class="menu">
+        <button id="volver">Volver a inicio</button>
+        <select id="selectordeunidades">
+          <option value="">Seleccionar medición</option>
+          <option value="Temperatura">Temperatura</option>
+          <option value="Medicion">Medición</option>
+          <option value="Humedad">Humedad</option>
+          <option value="Presion">Presión</option>
+          <option value="Sonido">Sonido</option>
+        </select>
+      </div>
+    </header>
+
+    <!-- Panel de control -->
+    <main class="main-panel">
+      <button class="medir">Empezar a medir</button>
+
+      <div class="panel">
+        <div class="key" data-key="w">↑</div>
+        <div class="key" data-key="a">←</div>
+        <div class="key" data-key="s">↓</div>
+        <div class="key" data-key="d">→</div>
+      </div>
+    </main>
+
+    <!-- Logo -->
+    <footer>
+      <img src="image 1.png" alt="Logo ENVIRO" class="logo">
+    </footer>
+
+  </div>
 </body>
 </html>
