@@ -10,3 +10,27 @@ html, body {
     width: 1300px;   
 }
 
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url("modern-clean-white-background-free-vector 1.png") no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+
+  #inicio {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;  
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#inicio:hover {
+  background-color: #0056b3;
+}
+
+}
+
