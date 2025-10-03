@@ -16,6 +16,14 @@ function enviarAArduino(mandar){
 } // Enviar info al arduino
 
 enviarAArduino(1)
+
+function medir(medir){
 const lectura = port.pipe(new ReadlineParser({ delimiter: '\r\n' })) //Leer info de arduino
-lectura.on('data', console.log);
+return lectura.on('data', console.log);
+}
+
+subscribeGETEvent("", )
+subscribePOSTEvent("medir", medir );
+startServer(3000, true);
+
 
