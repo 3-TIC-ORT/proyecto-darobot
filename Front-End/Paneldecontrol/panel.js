@@ -20,3 +20,9 @@ window.addEventListener('keyup', (e) => {
     if (k.dataset.key === key) k.classList.remove('active');
   });
 });
+
+
+const button2 = document.getElementById("medir");
+button2.addEventListener("click", () => {
+
+});
