@@ -20,13 +20,12 @@ subscribeGETEvent("medir",(data) => {
     medir()
   }
 })
-
 function medir(){
 const lectura = port.pipe(new ReadlineParser({ delimiter: '\r\n' })) //Leer info de arduino
 const recibirdatos = lectura.on('data', console.log);
 return recibirdatos
 }
-
+subscribePOSTEvent("grafico", medir)
 startServer()
 
 
