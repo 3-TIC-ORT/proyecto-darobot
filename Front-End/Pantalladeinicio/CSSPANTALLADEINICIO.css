@@ -1,26 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
-h1 {
-    font-family: 'Inter';
-    text-align: center;
-    font-size: 55px;
-    text-decoration: underline
-}
-
-h2 {
-    font-family: 'Inter';
-    text-align: center;
-    font-size: 27px;
-    text-decoration: underline
-}
+.encabezado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #cac8c3;
+    height: 70px;
+  }
 
 .contenedor-botones {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 7px;
     margin-top: 25px;
 }
+
+
+
+
+
 
 html, body {
     margin: 0;
@@ -41,3 +40,4 @@ body {
         display: block;
         margin: 20px auto;
     }
+  
