@@ -1,4 +1,4 @@
-import { SerialPort } from 'serialport';
+import { ReadlineParser, SerialPort } from 'serialport';
 import { subscribeGETEvent, subscribePOSTEvent, realTimeEvent, startServer } from "soquetic";
 
 // Create a port
@@ -9,23 +9,26 @@ const port = new SerialPort({
  
 port.on("open",()=>{
     console.log("Hola")
+    enviarAArduino("1\n")
 })
 //Conexion con Hardware
 function enviarAArduino(mandar){
+
     port.write(mandar.toString())
 } // Enviar info al arduino
-enviarAArduino(1)
+
 subscribeGETEvent("medir",(data) => {
   if(data === true){
     medir()
   }
 })
-function medir(){
+
 const lectura = port.pipe(new ReadlineParser({ delimiter: '\r\n' })) //Leer info de arduino
-const recibirdatos = lectura.on('data', console.log);
-return recibirdatos
-}
-subscribePOSTEvent("grafico", medir)
+lectura.on('data', (data) => console.log(data));
+
+
+
+//subscribePOSTEvent("grafico", medir)
 startServer()
 
 
