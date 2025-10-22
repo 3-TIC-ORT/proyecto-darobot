@@ -10,10 +10,8 @@
 
 .contenedor-botones {
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 7px;
-    margin-top: 25px;
 }
 
 
@@ -36,8 +34,8 @@ body {
 
 }
  
-    .imagen-centro {
-        display: block;
-        margin: 20px auto;
+    .logo {
+        display: flex;
+        justify-content: center;
     }
   
