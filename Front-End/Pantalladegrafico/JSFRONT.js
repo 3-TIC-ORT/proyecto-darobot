@@ -62,7 +62,9 @@ window.onload = function () {
         data: []
     });
 
-    select.addEventListener("change", function () {
+    select.addEventListener("change", dibujarGrafico);
+
+    function dibujarGrafico(){
         const opcion = select.value;
         if (opcion === "vacio") {
             container.innerHTML = "";
@@ -121,5 +123,29 @@ window.onload = function () {
 
         chart.options.data = series;
         chart.render();
-    });
+    }
 }
+
+subscribeRealTimeEvent("nuevasTemperaturas", (nuevasTemperaturas) =>{
+    temperaturas = nuevasTemperaturas
+    dibujarGrafico()
+})
+
+subscribeRealTimeEvent("nuevasLuces", (nuevasLuces) =>{
+    luces = nuevasLuces
+    dibujarGrafico()
+})
+
+subscribeRealTimeEvent("nuevasHumedades", (nuevasHumedades) =>{
+    humedades = nuevasHumedades
+    dibujarGrafico()
+})
+subscribeRealTimeEvent("nuevosSonidos", (nuevosSonidos) =>{
+    sonidos = nuevosSonidos
+    dibujarGrafico()
+})
+subscribeRealTimeEvent("nuevasPresiones", (nuevasPresiones) =>{
+    presiones = nuevasPresiones
+    dibujarGrafico()
+})
+connect2server(3000)
