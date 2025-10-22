@@ -9,12 +9,12 @@ const port = new SerialPort({
  
 port.on("open",()=>{
     console.log("Hola")
-    enviarAArduino("1\n")
+   setInterval(() => enviarAArduino(1),1000)
 })
 //Conexion con Hardware
 function enviarAArduino(mandar){
 
-    port.write(mandar.toString())
+    port.write(mandar.toString() + "\n")
 } // Enviar info al arduino
 
 subscribeGETEvent("medir",(data) => {
