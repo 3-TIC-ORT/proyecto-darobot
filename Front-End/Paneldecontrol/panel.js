@@ -1,10 +1,8 @@
-// Botón volver
 const button = document.getElementById("volver");
 button.addEventListener("click", () => {
   window.location.href = "../Pantalladeinicio/HTMLPANTALLADEINICIO.html";
 });
 
-// Control WASD
 const keys = document.querySelectorAll('.key');
 
 window.addEventListener('keydown', (e) => {

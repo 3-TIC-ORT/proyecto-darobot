@@ -10,3 +10,8 @@ button2.addEventListener("click", function cambiarpagina(){
   window.location.href = "../Paneldecontrol/panel.html";
 })
 
+const colorboton = document.getElementById("contenedor-botones")
+
+boton.addEventListener("click", function(){
+  boton.style.backgroundColor = "lightblue";
+})
