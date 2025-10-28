@@ -1,6 +1,6 @@
 import { ReadlineParser, SerialPort } from 'serialport';
 import { subscribeGETEvent, subscribePOSTEvent, realTimeEvent, startServer } from "soquetic";
-
+import fs from "fs";
 // Create a port
 const port = new SerialPort({
   path: 'COM5',
@@ -18,26 +18,32 @@ function enviarAArduino(mandar){
 } // Enviar info al arduino
  function medicion(Tipo){
   if (Tipo === "humedad") {
-    enviarAArduino("MH")
+    enviarAArduino("RH")
   };
   if (Tipo === "temperatura") {
-    enviarAArduino("MT")
+    enviarAArduino("RT")
   };
-  if (Tipo === "presion") {
-    enviarAArduino("MP")
-  };
+
   if (Tipo === "luz") {
-    enviarAArduino("ML")
+    enviarAArduino("RL")
   };
   if (Tipo === "sonido") {
-    enviarAArduino("MS")
+    enviarAArduino("RM")
   };
- 
  };
 subscribePOSTEvent("medir", medicion)
 
 const lectura = port.pipe(new ReadlineParser({ delimiter: '\r\n' })) //Leer info de arduino
-lectura.on('data', (data) => console.log(data));
+lectura.on('data', (data) => {
+  // Aca va todo el HW
+  let ledOn = data.trim() === "on";
+  let tipo = substring(0 <= 2) 
+  let valor = substring(2 <= 1000)
+  realTimeEvent("boton", {tipo,valor});
+    let devolucion = JSON.stringify(data, null, 2);
+    fs.writeFileSync("Back-End/datos.json", devolucion);
+    return {ok:true};
+});
 
 
 startServer()
