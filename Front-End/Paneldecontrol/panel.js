@@ -24,3 +24,19 @@ const button2 = document.getElementById("medir");
 button2.addEventListener("click", () => {
 
 });
+
+
+const botones = document.querySelectorAll(".botonera button");
+
+botones.forEach(boton => {
+  boton.addEventListener("click", () => {
+    if (boton.classList.contains("activo")) {
+      boton.classList.remove("activo");
+    } else {
+      botones.forEach(b => b.classList.remove("activo"));
+      boton.classList.add("activo");
+    }
+  });
+});
+
+
