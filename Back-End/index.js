@@ -5,40 +5,42 @@ import fs from "fs";
 const port = new SerialPort({
   path: 'COM5',
   baudRate: 9600,
-})
+});
  
 port.on("open",()=>{
     console.log("Hola")
-    //Borrar el setInterval-Lo unico importante es la funcion
-})
+});
 
 //Conexion con Hardware
 function enviarAArduino(mandar){
     port.write(mandar.toString() + "\n")
-} // Enviar info al arduino
+}; // Enviar info al arduino
  function medicion(Tipo){
   if (Tipo === "humedad") {
     enviarAArduino("RH")
-  };
+  }
   if (Tipo === "temperatura") {
     enviarAArduino("RT")
-  };
+  }
 
   if (Tipo === "luz") {
     enviarAArduino("RL")
-  };
+  }
   if (Tipo === "sonido") {
     enviarAArduino("RM")
+  }
+  else {
+    console.log("error")
   };
  };
-subscribePOSTEvent("medir", medicion)
+subscribePOSTEvent("medir", medicion);
 
 const lectura = port.pipe(new ReadlineParser({ delimiter: '\r\n' })) //Leer info de arduino
 lectura.on('data', (data) => {
   // Aca va todo el HW
-  let ledOn = data.trim() === "on";
-  let tipo = data.substring(0, 2) 
-  let valor = data.substring(2, )
+  let devOn = data.trim() === "on";
+  let tipo = data.substring(0, 2);
+  let valor = data.substring(2, );
   realTimeEvent("boton", {tipo,valor});
     let devolucion = JSON.stringify(data, null, 2);
     fs.writeFileSync("Back-End/datos.json", devolucion);
