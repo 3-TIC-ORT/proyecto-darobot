@@ -37,8 +37,8 @@ const lectura = port.pipe(new ReadlineParser({ delimiter: '\r\n' })) //Leer info
 lectura.on('data', (data) => {
   // Aca va todo el HW
   let ledOn = data.trim() === "on";
-  let tipo = substring(0 <= 2) 
-  let valor = substring(2 <= 1000)
+  let tipo = data.substring(0, 2) 
+  let valor = data.substring(2, )
   realTimeEvent("boton", {tipo,valor});
     let devolucion = JSON.stringify(data, null, 2);
     fs.writeFileSync("Back-End/datos.json", devolucion);
@@ -48,5 +48,6 @@ lectura.on('data', (data) => {
 
 startServer()
 
-
+//Hacer front de prueba cargando la documentacion de soquetic en chatgpt.
+//Usar el front de la demo de arduino para verificar que ande.
 
