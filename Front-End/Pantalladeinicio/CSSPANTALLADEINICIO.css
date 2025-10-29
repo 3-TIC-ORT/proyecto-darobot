@@ -18,9 +18,14 @@
 }
 
 
+.titulo {
+    font-family: 'Montserrat', sans-serif;
+}
 
-
-
+.grande{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+}
 
 html, body {
     margin: 0;

@@ -71,13 +71,15 @@ body::before {
 .main-panel {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: flex-end;
     gap: 50px;
 }
 
 .medir {
     padding: 10px 15px;
     font-size: 16px;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .panel {
@@ -118,14 +120,27 @@ footer {
 }
 
 .logo {
-    max-width: 500px;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
-/* Contenedor general */
+/* Contenedor general y todo acerca de los botones } */
+
+.opcionesdemedicion {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+}
+
+
 .botonera {
     display: flex;
     gap: 15px;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    
     margin-top: 60px;
   }
   
@@ -145,20 +160,20 @@ footer {
   
   /* Colores de borde y texto inicial */
   .Sonido { border-color: #e74c3c; color: #e74c3c; }
-  .TemperaturayHumedad { border-color: #27ae60; color: #27ae60; }
-  .Presion { border-color: #2980b9; color: #2980b9; }
+  .TemperaturayHumedad { border-color: #2980b9; color: #2980b9; }
+  .Presion { border-color: #b31cc7; color: #b31cc7; }
   .Luz { border-color: #f1c40f; color: #f1c40f; }
   
   /* Hover: rellena con color y cambia texto */
-  .Sonido:hover { background-color: #e74c3c; color: white; }
-  .TemperaturayHumedad:hover { background-color: #27ae60; color: white; }
-  .Presion:hover { background-color: #2980b9; color: white; }
+  .Sonido:hover { background-color: #e74c3c; color: black; }
+  .TemperaturayHumedad:hover { background-color: #2980b9; color: black; }
+  .Presion:hover { background-color: #b31cc7; color: black; }
   .Luz:hover { background-color: #f1c40f; color: black; }
   
   /* Activo: mantiene relleno luego del clic */
-  .Sonido.activo, .Sonido:active { background-color: #e74c3c; color: white; }
-  .TemperaturayHumedad.activo, .TemperaturayHumedad:active { background-color: #27ae60; color: white; }
-  .Presion.activo, .Presion:active { background-color: #2980b9; color: white; }
+  .Sonido.activo, .Sonido:active { background-color: #e74c3c; color: black; }
+  .TemperaturayHumedad.activo, .TemperaturayHumedad:active { background-color: #2980b9; color: black; }
+  .Presion.activo, .Presion:active { background-color: #b31cc7; color: black; }
   .Luz.activo, .Luz:active { background-color: #f1c40f; color: black; }
   
   /* Efecto visual cuando está activo */
