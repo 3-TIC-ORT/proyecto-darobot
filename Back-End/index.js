@@ -33,8 +33,27 @@ function enviarAArduino(mandar){
     console.log("error")
   };
  };
-subscribePOSTEvent("medir", medicion);
 
+ function movimiento(direccion){
+  if (direccion === "delante") {
+    enviarAArduino("W")
+  }
+  if (direccion === "atras") {
+    enviarAArduino("S")
+  }
+
+  if (direccion === "derecha") {
+    enviarAArduino("D")
+  }
+  if (direccion === "izquierda") {
+    enviarAArduino("A")
+  }
+  else {
+    console.log("error")
+  };
+ };
+subscribePOSTEvent("medir", medicion);
+subscribePOSTEvent("movimiento", movimiento);
 const lectura = port.pipe(new ReadlineParser({ delimiter: '\r\n' })) //Leer info de arduino
 lectura.on('data', (data) => {
   // Aca va todo el HW
