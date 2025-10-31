@@ -12,15 +12,9 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    h1{
-        font-family: 'Montserrat', sans-serif;
-    }
+
 }
 
-
-.titulo {
-    font-family: 'Montserrat', sans-serif;
-}
 
 .grande{
     font-family: 'Montserrat', sans-serif;
@@ -43,7 +37,6 @@ body {
 }
  
     .logo {
-        display: flex;
-        justify-content: center;
+        position: absolute;
     }
   
