@@ -8,24 +8,40 @@
     height: 70px;
   }
 
-.contenedor-botones {
+  .contenedor-botones {
     position: absolute;
-    top: 50%;              /* centrado vertical */
-    left: 20px;            /* margen desde el borde izquierdo */
-    transform: translateY(-50%); /* corrige el centrado */
+    top: 55%;              
+    left: 20px;            
+    transform: translateY(-50%);
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 20px;
-
-
+    flex-direction: column; /* mantiene la columna */
+    gap: 20px;              /* espacio entre los botones */
 }
+
+
+/* Aplica a ambos botones dentro del contenedor */
+.contenedor-botones button {
+    width: 400px;       /* ancho del botón, cambia a tu gusto */
+    height: 70px;      /* alto del botón, cambia a tu gusto */
+    font-size: 24px;    /* tamaño del texto */
+    background-color: #ffffff; /* color de ejemplo */
+    color: rgb(0, 0, 0);
+    border: 10px solid #7DC5FF;
+    border-radius: 0px;
+    cursor: pointer;
+}
+
+
+
+
 .contenedor-botones button:hover,
 .contenedor-botones button:active {
-    background-color: #00bfff; /* celeste */
+    background-color: #7DC5FF; /* celeste */
     color: white;              /* texto blanco para contraste */
     cursor: pointer;           /* cambia el puntero a mano */
 }
+
+
 
 
 
@@ -47,34 +63,42 @@
 .verde {
     color: #28a745; /* verde */
   }
-  
+ 
   .azul {
     color: #007bff; /* azul */
   }
 
 
+
+
 .parrafo{
     position: absolute;
     top: 50%;                /* centrado vertical */
-    right: 20px;             /* margen desde el borde derecho */
+    right: 150px;            /* margen desde el borde derecho */
     transform: translateY(-50%); /* corrige el centrado vertical */
     text-align: right;       /* alinea el texto a la derecha */
-    max-width: 200px;        /* opcional: limita el ancho del párrafo */
-    font-family: 'Monserrat';
+    width: 350px;        /* opcional: limita el ancho del párrafo */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
 }
+
+
+
 
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden; 
+    overflow: hidden;
 }
+
 
 body {
     background-image: url("modern-clean-white-background-free-vector 1 - copia.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
 
 }
  
@@ -83,7 +107,7 @@ body {
         top: 55%;
         left: 45%;
         transform: translate(-50%, -50%); /* centra exacto en ambos ejes */
-        width: 200px;  /* opcional */
-        height: auto;  /*  proporciones */ 
+        width: 250px;  /* opcional */
+        height: auto;  /*  proporciones */
        }
-  
+ 
