@@ -9,16 +9,58 @@
   }
 
 .contenedor-botones {
+    position: absolute;
+    top: 50%;              /* centrado vertical */
+    left: 20px;            /* margen desde el borde izquierdo */
+    transform: translateY(-50%); /* corrige el centrado */
     display: flex;
     justify-content: center;
     flex-direction: column;
+    gap: 20px;
+
 
 }
+.contenedor-botones button:hover,
+.contenedor-botones button:active {
+    background-color: #00bfff; /* celeste */
+    color: white;              /* texto blanco para contraste */
+    cursor: pointer;           /* cambia el puntero a mano */
+}
+
+
+
+
+
+
 
 
 .grande{
     font-family: 'Montserrat', sans-serif;
-    font-size: 50px;
+    font-size: 120px;
+    position: absolute;
+    top: 30px;              /* margen desde arriba */
+    left: 50%;              /* punto medio horizontal */
+    transform: translateX(-50%); /* centra horizontalmente */
+    text-align: center;
+    margin: 0;
+}
+.verde {
+    color: #28a745; /* verde */
+  }
+  
+  .azul {
+    color: #007bff; /* azul */
+  }
+
+
+.parrafo{
+    position: absolute;
+    top: 50%;                /* centrado vertical */
+    right: 20px;             /* margen desde el borde derecho */
+    transform: translateY(-50%); /* corrige el centrado vertical */
+    text-align: right;       /* alinea el texto a la derecha */
+    max-width: 200px;        /* opcional: limita el ancho del párrafo */
+    font-family: 'Monserrat';
 }
 
 html, body {
@@ -38,5 +80,10 @@ body {
  
     .logo {
         position: absolute;
-    }
+        top: 55%;
+        left: 45%;
+        transform: translate(-50%, -50%); /* centra exacto en ambos ejes */
+        width: 200px;  /* opcional */
+        height: auto;  /*  proporciones */ 
+       }
   
