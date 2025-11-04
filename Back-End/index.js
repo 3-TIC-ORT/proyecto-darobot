@@ -3,7 +3,7 @@ import { subscribeGETEvent, subscribePOSTEvent, realTimeEvent, startServer } fro
 import fs from "fs";
 // Create a port
 const port = new SerialPort({
-  path: 'COM5',
+  path: 'COM3',
   baudRate: 9600,
 });
  
