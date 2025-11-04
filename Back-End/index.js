@@ -48,6 +48,9 @@ function enviarAArduino(mandar){
   if (direccion === "izquierda") {
     enviarAArduino("A")
   }
+  if (direccion === "frenar") {
+    enviarAArduino("X")
+  }
   else {
     console.log("error")
   };

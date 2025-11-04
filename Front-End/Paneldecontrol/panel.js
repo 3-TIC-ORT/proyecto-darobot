@@ -39,3 +39,7 @@ botones.forEach(boton => {
   });
 });
 
+
+document.getElementById("inicio").addEventListener("click", () => {
+  postEvent("volverInicio", {});
+});
