@@ -72,3 +72,4 @@ startServer()
 //Hacer front de prueba cargando la documentacion de soquetic en chatgpt.
 //Usar el front de la demo de arduino para verificar que ande.
 
+ 
