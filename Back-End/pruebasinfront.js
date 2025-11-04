@@ -1,5 +1,5 @@
 import { ReadlineParser, SerialPort } from 'serialport';
-//import { subscribeGETEvent, subscribePOSTEvent, realTimeEvent, startServer } from "soquetic";
+import { subscribeGETEvent, subscribePOSTEvent, realTimeEvent, startServer } from "soquetic";
 import fs from "fs";
 // Create a port
 const port = new SerialPort({
