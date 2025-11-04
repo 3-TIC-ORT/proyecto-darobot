@@ -61,11 +61,11 @@
     margin: 0;
 }
 .verde {
-    color: #28a745; /* verde */
+    color: #57A37B; /* verde */
   }
  
   .azul {
-    color: #007bff; /* azul */
+    color: #00487B; /* azul */
   }
 
 
@@ -105,9 +105,23 @@ body {
     .logo {
         position: absolute;
         top: 55%;
-        left: 45%;
+        left: 47%;
         transform: translate(-50%, -50%); /* centra exacto en ambos ejes */
         width: 250px;  /* opcional */
         height: auto;  /*  proporciones */
        }
  
+       .link {
+        position: absolute;
+        top: 25px;     /* distancia desde arriba */
+        right: 10px;   /* distancia desde la derecha */
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+      }
+      
+      .link:hover {
+        text-decoration: underline;
+      }
+      
