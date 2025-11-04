@@ -1,5 +1,5 @@
 import { ReadlineParser, SerialPort } from 'serialport';
-import { subscribeGETEvent, subscribePOSTEvent, realTimeEvent, startServer } from "soquetic";
+//import { subscribeGETEvent, subscribePOSTEvent, realTimeEvent, startServer } from "soquetic";
 import fs from "fs";
 // Create a port
 const port = new SerialPort({
@@ -52,24 +52,19 @@ function enviarAArduino(mandar){
     console.log("error")
   };
  };
-subscribePOSTEvent("medir", medicion);
-subscribePOSTEvent("movimiento", movimiento);
+//subscribePOSTEvent("medir", medicion);
+//subscribePOSTEvent("movimiento", movimiento);
 const lectura = port.pipe(new ReadlineParser({ delimiter: '\r\n' })) //Leer info de arduino
 lectura.on('data', (data) => {
   // Aca va todo el HW
   let devOn = data.trim() === "on";
   let tipo = data.substring(0, 2);
   let valor = data.substring(2, );
-  realTimeEvent("grafico", {tipo,valor});
+  console.log(tipo, valor)
     let devolucion = JSON.stringify(data, null, 2);
-    fs.writeFileSync("Back-End/datos.json", devolucion);
+    fs.writeFileSync("Back-End/datosprueba.json", devolucion);
     return {ok:true};
 });
 
 
 startServer()
-
-//Hacer front de prueba cargando la documentacion de soquetic en chatgpt.
-//Usar el front de la demo de arduino para verificar que ande.
-
- 
