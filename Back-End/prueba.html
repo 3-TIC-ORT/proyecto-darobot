@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comunicación Frontend/Backend</title>
+
+    <!-- 1. Importaciones Requeridas por SoqueTIC (Fuente 1) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/JZylber/SoqueTIC-Client@v1.4.1/soquetic-client.js"></script>
+
+    <!-- 2. Archivo de Lógica JavaScript -->
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <h1>Comunicación de Prueba</h1>
+
+    <!-- ESTRUCTURA PARA ENVIAR DATOS CON BOTÓN (POST EVENT) -->
+    <form action="" id="form">
+        <!-- Input opcional, pero común en las demos para enviar la "palabra" -->
+        <input id="input" autocomplete="off" placeholder="Escribe un mensaje aquí" />
+
+        <!-- El botón que, al ser presionado, activa el envío de la data en el formulario -->
+        <button>Enviar al Backend</button>
+    </form>
+
+    <hr>
+
+    <!-- ESTRUCTURA PARA MOSTRAR LA RESPUESTA DEL BACKEND -->
+    <!-- Este párrafo recibe la palabra que el backend devuelve como respuesta al POST -->
+    <h3>Respuesta del Backend:</h3>
+    <p id="a">Aquí aparecerá el texto de confirmación.</p>
+
+</body>
+</html>
