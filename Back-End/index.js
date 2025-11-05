@@ -35,7 +35,7 @@ function enviarAArduino(mandar){
  };
 
  function movimiento(direccion){
-  if (direccion === "delante") {
+  if (direccion === "adelante") {
     enviarAArduino("W")
   }
   if (direccion === "atras") {
@@ -60,7 +60,6 @@ subscribePOSTEvent("movimiento", movimiento);
 const lectura = port.pipe(new ReadlineParser({ delimiter: '\r\n' })) //Leer info de arduino
 lectura.on('data', (data) => {
   // Aca va todo el HW
-  let devOn = data.trim() === "on";
   let tipo = data.substring(0, 2);
   let valor = data.substring(2, );
   realTimeEvent("grafico", {tipo,valor});

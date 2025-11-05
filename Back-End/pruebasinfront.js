@@ -54,10 +54,11 @@ function enviarAArduino(mandar){
  };
 //subscribePOSTEvent("medir", medicion);
 //subscribePOSTEvent("movimiento", movimiento);
+medicion(temperatura)
+
 const lectura = port.pipe(new ReadlineParser({ delimiter: '\r\n' })) //Leer info de arduino
 lectura.on('data', (data) => {
   // Aca va todo el HW
-  let devOn = data.trim() === "on";
   let tipo = data.substring(0, 2);
   let valor = data.substring(2, );
   console.log(tipo, valor)
