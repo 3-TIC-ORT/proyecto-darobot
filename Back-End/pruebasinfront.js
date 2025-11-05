@@ -3,12 +3,13 @@ import { subscribeGETEvent, subscribePOSTEvent, realTimeEvent, startServer } fro
 import fs from "fs";
 // Create a port
 const port = new SerialPort({
-  path: 'COM3',
+  path: 'COM5',
   baudRate: 9600,
 });
  
 port.on("open",()=>{
     console.log("Hola")
+    setInterval(() => enviarAArduino("RT10"),1000)
 });
 
 //Conexion con Hardware
@@ -54,16 +55,16 @@ function enviarAArduino(mandar){
  };
 //subscribePOSTEvent("medir", medicion);
 //subscribePOSTEvent("movimiento", movimiento);
-medicion(temperatura)
+
 
 const lectura = port.pipe(new ReadlineParser({ delimiter: '\r\n' })) //Leer info de arduino
 lectura.on('data', (data) => {
   // Aca va todo el HW
   let tipo = data.substring(0, 2);
   let valor = data.substring(2, );
-  console.log(tipo, valor)
     let devolucion = JSON.stringify(data, null, 2);
     fs.writeFileSync("Back-End/datosprueba.json", devolucion);
+    console.log(tipo, valor);
     return {ok:true};
 });
 
