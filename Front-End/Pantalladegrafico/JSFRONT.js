@@ -6,10 +6,21 @@ button.addEventListener("click", function cambiarpagina(){
   window.location.href = "../Pantalladeinicio/HTMLPANTALLADEINICIO.html";
 })
 
-const selector = document.getElementById("selectordeunidades")
-if (selector.value === "Temperatura"){
+const botones = document.querySelectorAll(".botonera button");
 
-}
+botones.forEach(boton => {
+  boton.addEventListener("click", () => {
+    if (boton.classList.contains("activo")) {
+      boton.classList.remove("activo");
+    } else {
+      botones.forEach(b => b.classList.remove("activo"));
+      boton.classList.add("activo");
+    }
+  });
+});
+
+const selector = document.getElementById("selectordeunidades")
+{}
 
 let temperaturas = [
     { label: "Lunes", y: 22 },
@@ -148,4 +159,4 @@ subscribeRealTimeEvent("nuevasPresiones", (nuevasPresiones) =>{
     presiones = nuevasPresiones
     dibujarGrafico()
 })
-connect2server(3000)
+connect2server();

@@ -34,3 +34,59 @@ body {
 
 }
 
+
+.opcionesdemedicion {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 50px;
+}
+
+
+.botonera {
+  display: flex;
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+  
+  margin-top: 60px;
+}
+
+/* Estilos base para todos los botones */
+.botonera button {
+  background: transparent;
+  border: 3px solid; /* siempre se verá el borde */
+  padding: 12px 28px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  opacity: 0.9;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+/* Colores de borde y texto inicial */
+.Sonido { border-color: #e74c3c; color: #e74c3c; }
+.TemperaturayHumedad { border-color: #2980b9; color: #2980b9; }
+.Presion { border-color: #b31cc7; color: #b31cc7; }
+.Luz { border-color: #f1c40f; color: #f1c40f; }
+
+/* Hover: rellena con color y cambia texto */
+.Sonido:hover { background-color: #e74c3c; color: black; }
+.TemperaturayHumedad:hover { background-color: #2980b9; color: black; }
+.Presion:hover { background-color: #b31cc7; color: black; }
+.Luz:hover { background-color: #f1c40f; color: black; }
+
+/* Activo: mantiene relleno luego del clic */
+.Sonido.activo, .Sonido:active { background-color: #e74c3c; color: black; }
+.TemperaturayHumedad.activo, .TemperaturayHumedad:active { background-color: #2980b9; color: black; }
+.Presion.activo, .Presion:active { background-color: #b31cc7; color: black; }
+.Luz.activo, .Luz:active { background-color: #f1c40f; color: black; }
+
+/* Efecto visual cuando está activo */
+.botonera button.activo {
+  opacity: 1;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+}

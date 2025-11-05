@@ -65,3 +65,4 @@ document.addEventListener("keydown", (evento) => {
 });
 
 connect2Server();
+
