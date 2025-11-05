@@ -110,8 +110,13 @@ body::before {
 
 .key[data-key="w"] { grid-column: 2; grid-row: 1; }
 .key[data-key="a"] { grid-column: 1; grid-row: 2; }
-.key[data-key="s"] { grid-column: 2; grid-row: 2; }
+.key[data-key="s"] { grid-column: 2; grid-row: 3; }
 .key[data-key="d"] { grid-column: 3; grid-row: 2; }
+.key[data-key="x"] { grid-column: 2; grid-row: 2; }
+
+.key[data-key="x"]{
+    border-radius: 30px;
+}
 
 footer {
     display: flex;

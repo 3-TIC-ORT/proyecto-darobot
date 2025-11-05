@@ -40,6 +40,28 @@ botones.forEach(boton => {
 });
 
 
+
+
 document.getElementById("inicio").addEventListener("click", () => {
   postEvent("volverInicio", {});
 });
+
+document.addEventListener("keydown", (evento) => {
+  if (evento.key === "w") {
+    postEvent("movimiento", "adelante");
+  }
+  if (evento.key === "s") {
+    postEvent("movimiento", "atras");
+  }
+  if (evento.key === "a") {
+    postEvent("movimiento", "izquierda");
+  }
+  if (evento.key === "d") {
+    postEvent("movimiento", "derecha");
+  }
+  if (evento.key === "x") {
+    postEvent("movimiento", "frenar");
+  }
+});
+
+connect2Server();
