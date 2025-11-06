@@ -9,7 +9,7 @@ const port = new SerialPort({
  
 port.on("open",()=>{
     console.log("Hola")
-    setInterval(() => enviarAArduino("RT10"),1000)
+    setInterval(() => enviarAArduino("RL25"),1000)
 });
 
 //Conexion con Hardware
@@ -62,11 +62,10 @@ lectura.on('data', (data) => {
   // Aca va todo el HW
   let tipo = data.substring(0, 2);
   let valor = data.substring(2, );
-    let devolucion = JSON.stringify(data, null, 2);
-    fs.writeFileSync("Back-End/datosprueba.json", devolucion);
+  let devoluciones = JSON.parse(fs.readFileSync("datosprueba.json", "utf-8"));
+    devoluciones.push({tipo, valor})
+    let devolucion = JSON.stringify(devoluciones, null, 2);
+    fs.writeFileSync("datosprueba.json", devolucion);
     console.log(tipo, valor);
     return {ok:true};
 });
-
-
-startServer()
