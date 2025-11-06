@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: url('modern-clean-white-background-free-vector 1.png') no-repeat center center fixed;
+    background: url('image 2.png') no-repeat center center fixed;
     background-size: cover;
     color: #222;
     overflow: hidden;
@@ -141,50 +141,65 @@ justify-content: center;
 
 
 .botonera {
-    display: flex;
-    gap: 15px;
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    transform: translateY(-50%);
+    
     display: flex;
     flex-direction: column;
-    
-    margin-top: 60px;
-  }
-  
-  /* Estilos base para todos los botones */
-  .botonera button {
-    background: transparent;
-    border: 3px solid; /* siempre se verá el borde */
-    padding: 12px 28px;
-    font-size: 16px;
-    border-radius: 10px;
-    cursor: pointer;
-    opacity: 0.9;
+    gap: 20px;
+}
+
+/* BOTÓN — versión grande y texto centrado */
+.botonera button {
+    background-color: white;
+    border: 6px solid;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
+    cursor: pointer;
+    opacity: 0.95;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-  }
-  
-  /* Colores de borde y texto inicial */
-  .Sonido { border-color: #e74c3c; color: #e74c3c; }
-  .TemperaturayHumedad { border-color: #2980b9; color: #2980b9; }
-  .Presion { border-color: #b31cc7; color: #b31cc7; }
-  .Luz { border-color: #f1c40f; color: #f1c40f; }
-  
-  /* Hover: rellena con color y cambia texto */
-  .Sonido:hover { background-color: #e74c3c; color: black; }
-  .TemperaturayHumedad:hover { background-color: #2980b9; color: black; }
-  .Presion:hover { background-color: #b31cc7; color: black; }
-  .Luz:hover { background-color: #f1c40f; color: black; }
-  
-  /* Activo: mantiene relleno luego del clic */
-  .Sonido.activo, .Sonido:active { background-color: #e74c3c; color: black; }
-  .TemperaturayHumedad.activo, .TemperaturayHumedad:active { background-color: #2980b9; color: black; }
-  .Presion.activo, .Presion:active { background-color: #b31cc7; color: black; }
-  .Luz.activo, .Luz:active { background-color: #f1c40f; color: black; }
-  
-  /* Efecto visual cuando está activo */
-  .botonera button.activo {
+
+    width: 330px;      /* ancho más grande */
+    height: 80px;      /* alto grande */
+
+    display: flex;
+    align-items: center;
+    justify-content: center; /* ✅ texto centrado */
+
+    font-size: 24px;   /* ✅ texto más grande */
+    font-weight: 750;  /* ✅ más grueso */
+    text-align: center;
+    
+}
+
+/* Opcional si usas <i> o <img> dentro del botón */
+.botonera button i,
+.botonera button img {
+    font-size: 22px;
+    margin-right: 12px;
+}
+
+/* Colores */
+.Sonido { border-color: #e74c3c; color: #e74c3c; }
+.TemperaturayHumedad { border-color: #2980b9; color: #2980b9; }
+.Presion { border-color: #b31cc7; color: #b31cc7; }
+.Luz { border-color: #f1c40f; color: #f1c40f; }
+
+/* Hover */
+.Sonido:hover { background-color: #e74c3c; color: black; }
+.TemperaturayHumedad:hover { background-color: #2980b9; color: black; }
+.Presion:hover { background-color: #b31cc7; color: black; }
+.Luz:hover { background-color: #f1c40f; color: black; }
+
+/* Activo */
+.Sonido.activo, .Sonido:active { background-color: #e74c3c; color: black; }
+.TemperaturayHumedad.activo, .TemperaturayHumedad:active { background-color: #2980b9; color: black; }
+.Presion.activo, .Presion:active { background-color: #b31cc7; color: black; }
+.Luz.activo, .Luz:active { background-color: #f1c40f; color: black; }
+
+.botonera button.activo {
     opacity: 1;
     transform: scale(1.1);
     box-shadow: 0 0 10px rgba(0,0,0,0.25);
-  }
-  
+}
