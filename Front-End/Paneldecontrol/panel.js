@@ -1,73 +1,53 @@
-const button = document.getElementById("volver");
-button.addEventListener("click", () => {
+// Botón volver
+document.getElementById("volver").addEventListener("click", () => {
   window.location.href = "../Pantalladeinicio/HTMLPANTALLADEINICIO.html";
 });
 
-const keys = document.querySelectorAll('.key');
+// Teclas WASD + freno "X"
+document.addEventListener("keydown", (e) => {
+  const t = e.key.toLowerCase();
+  if (t === "w") postEvent("movimiento", "adelante");
+  if (t === "s") postEvent("movimiento", "atras");
+  if (t === "a") postEvent("movimiento", "izquierda");
+  if (t === "d") postEvent("movimiento", "derecha");
+  if (t === "x") postEvent("movimiento", "frenar");
+});
 
-window.addEventListener('keydown', (e) => {
-  const key = e.key.toLowerCase();
-  keys.forEach(k => {
-    if (k.dataset.key === key) k.classList.add('active');
+// Selección de sensores (solo uno activo)
+const sensores = document.querySelectorAll(".botonera button");
+
+sensores.forEach(btn => {
+  btn.addEventListener("click", () => {
+    sensores.forEach(b => b.classList.remove("activo"));
+    btn.classList.add("activo");
   });
 });
 
-window.addEventListener('keyup', (e) => {
-  const key = e.key.toLowerCase();
-  keys.forEach(k => {
-    if (k.dataset.key === key) k.classList.remove('active');
-  });
+// Enviar sensor al backend al medir
+document.getElementById("medir").addEventListener("click", () => {
+  const activo = document.querySelector(".botonera button.activo");
+  if (!activo) return alert("Seleccioná un sensor primero");
+
+  switch (activo.id) {
+    case "Sonido":
+      postEvent("medir", "sonido"); 
+      break;
+    case "TemperaturayHumedad":
+      postEvent("medir", "temperatura"); 
+      break;
+    case "Presion":
+      postEvent("medir", "presion"); 
+      break;
+    case "Luz":
+      postEvent("medir", "luz"); 
+      break;
+  }
 });
 
-
-const button2 = document.getElementById("medir");
-button2.addEventListener("click", () => {
-
-});
-
-
-const botones = document.querySelectorAll(".botonera button");
-
-botones.forEach(boton => {
-  boton.addEventListener("click", () => {
-    if (boton.classList.contains("activo")) {
-      boton.classList.remove("activo");
-    } else {
-      botones.forEach(b => b.classList.remove("activo"));
-      boton.classList.add("activo");
-    }
-  });
-});
-
-
-
-
+// Botón volver al inicio via SoqueTIC
 document.getElementById("inicio").addEventListener("click", () => {
   postEvent("volverInicio", {});
 });
 
-document.addEventListener("keydown", (evento) => {
-  if (evento.key === "w") {
-    postEvent("movimiento", "adelante");
-  }
-  if (evento.key === "s") {
-    postEvent("movimiento", "atras");
-  }
-  if (evento.key === "a") {
-    postEvent("movimiento", "izquierda");
-  }
-  if (evento.key === "d") {
-    postEvent("movimiento", "derecha");
-  }
-  if (evento.key === "x") {
-    postEvent("movimiento", "frenar");
-  }
-});
-
+// Conexión SoqueTIC
 connect2Server();
-
-
-//PostEvent(medir) => ("temperatura")
-document.getElementById("Sonido").addEventListener("click", (e) =>{
-  postEvent("","")
-})
