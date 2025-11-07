@@ -66,3 +66,8 @@ document.addEventListener("keydown", (evento) => {
 
 connect2Server();
 
+
+//PostEvent(medir) => ("temperatura")
+document.getElementById("Sonido").addEventListener("click", (e) =>{
+  postEvent("","")
+})
