@@ -1,12 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="tutorial.css" />
+    <title>EnviroMate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23e0e0e0;stop-opacity:0.3" /><stop offset="100%" style="stop-color:%23f5f5f5;stop-opacity:0.3" /></linearGradient></defs><ellipse cx="150" cy="100" rx="120" ry="80" fill="url(%23grad1)" opacity="0.4"/><ellipse cx="850" cy="150" rx="100" ry="100" fill="url(%23grad1)" opacity="0.3"/><ellipse cx="500" cy="350" rx="150" ry="100" fill="url(%23grad1)" opacity="0.35"/><ellipse cx="200" cy="400" rx="80" ry="60" fill="url(%23grad1)" opacity="0.3"/><ellipse cx="750" cy="400" rx="90" ry="70" fill="url(%23grad1)" opacity="0.4"/><line x1="50" y1="50" x2="950" y2="450" stroke="%23d0d0d0" stroke-width="2" opacity="0.2"/><line x1="100" y1="0" x2="900" y2="500" stroke="%23d0d0d0" stroke-width="2" opacity="0.2"/></svg>');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            width: 100%;
+            background-color: #c8c8c8;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-volver {
+            background-color: transparent;
+            border: none;
+            color: #333;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 8px 15px;
+            transition: color 0.3s;
+        }
+
+        .btn-volver:hover {
+            color: #000;
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: flex-start;
+            max-width: 1200px;
+        }
+
+        .box {
+            background-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            width: 250px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .box p {
+            color: #333;
+            line-height: 1.6;
+            font-size: 16px;
+            text-align: justify;
+        }
+    </style>
 </head>
 <body>
+    <div class="header">
+        <button class="btn-volver" onclick="window.location.href='../Pantalladeinicio/HTMLPANTALLADEINICIO.html'">
+            Volver
+          </button>
+          
+    </div>
     
+    <div class="content">
+        <div class="container">
+            <div class="box">
+                <p>
+                    Este es el primer rectángulo con bordes redondeados y transparencia. 
+                    Puedes agregar aquí el texto que necesites. El fondo es semi-transparente 
+                    para que se vea la imagen de fondo.
+                </p>
+            </div>
+
+            <div class="box">
+                <p>
+                    Este es el segundo rectángulo con el mismo estilo. 
+                    También tiene bordes redondeados y un efecto de transparencia 
+                    que permite ver la imagen de fondo de forma elegante.
+                </p>
+            </div>
+
+            <div class="box">
+                <p>
+                    Este es el tercer rectángulo. Todos comparten el mismo diseño 
+                    con bordes redondeados, sombras sutiles y un efecto de vidrio esmerilado 
+                    que les da un aspecto moderno.
+                </p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
