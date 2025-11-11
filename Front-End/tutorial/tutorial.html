@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EnviroMate</title>
+    <title>EnviroMate - ¿Cómo funciona?</title>
     <style>
         * {
             margin: 0;
@@ -12,107 +12,180 @@
         }
 
         body {
-            min-height: 100vh;
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23e0e0e0;stop-opacity:0.3" /><stop offset="100%" style="stop-color:%23f5f5f5;stop-opacity:0.3" /></linearGradient></defs><ellipse cx="150" cy="100" rx="120" ry="80" fill="url(%23grad1)" opacity="0.4"/><ellipse cx="850" cy="150" rx="100" ry="100" fill="url(%23grad1)" opacity="0.3"/><ellipse cx="500" cy="350" rx="150" ry="100" fill="url(%23grad1)" opacity="0.35"/><ellipse cx="200" cy="400" rx="80" ry="60" fill="url(%23grad1)" opacity="0.3"/><ellipse cx="750" cy="400" rx="90" ry="70" fill="url(%23grad1)" opacity="0.4"/><line x1="50" y1="50" x2="950" y2="450" stroke="%23d0d0d0" stroke-width="2" opacity="0.2"/><line x1="100" y1="0" x2="900" y2="500" stroke="%23d0d0d0" stroke-width="2" opacity="0.2"/></svg>');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            display: flex;
-            flex-direction: column;
-            font-family: Arial, sans-serif;
-        }
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+    min-height: 100vh;
+    margin: 0;  /* elimina espacio exterior */
+    padding: 0; /* elimina espacio interior */
+}
 
-        .header {
-            width: 100%;
-            background-color: #c8c8c8;
-            padding: 15px 30px;
+
+.header {
+    width: 100vw; /* 100% del ancho de la pantalla */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background: #e0e0e0;
+    border-radius: 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    margin: 0; /* elimina margen */
+}
+
+        .logo {
             display: flex;
-            justify-content: flex-end;
             align-items: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            gap: 10px;
         }
 
-        .btn-volver {
-            background-color: transparent;
-            border: none;
-            color: #333;
-            font-size: 16px;
+        .logo-icon {
+            width: 35px;
+            height: 35px;
+            background: #4CAF50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .menu-btn {
+            background: white;
+            border: 2px solid #ddd;
+            padding: 8px 16px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
             cursor: pointer;
-            padding: 8px 15px;
-            transition: color 0.3s;
+            font-size: 14px;
         }
 
-        .btn-volver:hover {
-            color: #000;
-        }
-
-        .content {
-            flex: 1;
+        .settings {
+            background: white;
+            border: 2px solid #ddd;
+            width: 35px;
+            height: 35px;
+            border-radius: 8px;
             display: flex;
-            justify-content: center;
             align-items: center;
-            padding: 20px;
-        }
-
-        .container {
-            display: flex;
-            gap: 30px;
             justify-content: center;
-            align-items: flex-start;
-            max-width: 1200px;
+            cursor: pointer;
         }
 
-        .box {
-            background-color: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            width: 250px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        .main-title {
+    text-align: center;
+    font-size: 10em;
+    font-weight: 700;
+    margin-bottom: 100px;
+}
+
+        .enviro {
+            color: #2e7d32;
         }
 
-        .box p {
-            color: #333;
+        .mate {
+            color: #1976d2;
+        }
+
+        .subtitle {
+    text-align: center;
+    color: #333;
+    font-size: 3em; /* más grande */
+    margin-top: -70px; /* acerca al H1 */
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+
+        .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* antes decía 280px */
+    gap: 30px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+        .card {
+    background: white;
+    border-radius: 16px;
+    padding: 40px; /* más espacio interno */
+    min-height: 180px; /* más alto */
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .card-title {
+    color: #2e7d32;
+    font-size: 1.2em; /* más grande */
+    line-height: 1.8; /* más espacio entre líneas */
+}
+
+        .card-text {
+            color: #555;
             line-height: 1.6;
-            font-size: 16px;
-            text-align: justify;
+            font-size: 0.95em;
+        }
+
+        .highlight {
+            color: #2e7d32;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2em;
+            }
+            
+            .subtitle {
+                font-size: 1.1em;
+            }
+
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <button class="btn-volver" onclick="window.location.href='../Pantalladeinicio/HTMLPANTALLADEINICIO.html'">
-            Volver
-          </button>
-          
+        <div class="logo">
+            <div class="logo-icon">
+
+            
+            
+            </div>
+            <button class="menu-btn" onclick="window.location.href='../Pantalladeinicio/HTMLPANTALLADEINICIO.html'">
+                ☰ Menú
+            </button>
+        </div>
+        <div style="display: flex; gap: 10px; align-items: center;">
+            <span style="font-size: 14px; color: #666;">¿Como funciona?</span>
+        </div>
     </div>
-    
-    <div class="content">
-        <div class="container">
-            <div class="box">
-                <p>
-                    Este es el primer rectángulo con bordes redondeados y transparencia. 
-                    Puedes agregar aquí el texto que necesites. El fondo es semi-transparente 
-                    para que se vea la imagen de fondo.
-                </p>
-            </div>
 
-            <div class="box">
-                <p>
-                    Este es el segundo rectángulo con el mismo estilo. 
-                    También tiene bordes redondeados y un efecto de transparencia 
-                    que permite ver la imagen de fondo de forma elegante.
-                </p>
-            </div>
+    <h1 class="main-title"><span class="enviro">Enviro</span><span class="mate">Mate</span></h1>
+    <h2 class="subtitle">¿Cómo funciona?</h2>
 
-            <div class="box">
-                <p>
-                    Este es el tercer rectángulo. Todos comparten el mismo diseño 
-                    con bordes redondeados, sombras sutiles y un efecto de vidrio esmerilado 
-                    que les da un aspecto moderno.
-                </p>
-            </div>
+    <div class="cards-container">
+        <div class="card">
+            <div class="card-title">EnviroMate es un robot medidor de ambientes, ete acompaña te ayuda etc. </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">En <span class="highlight">mediciones</span> vas a poder ver la medicion que se hizo durante el dia de la funcion que quieras </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">En <span class="highlight"> panel de control vas a  poder controlar a tu robot y elegir que sensor activar o que medir</span> podes</div>
         </div>
     </div>
 </body>
