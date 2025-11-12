@@ -1,205 +1,305 @@
-body {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: url('image 2.png') no-repeat center center fixed;
     background-size: cover;
     color: #222;
-    overflow: hidden;
+    min-height: 100vh;
     position: relative;
-}
+  }
 
-body::before {
+  body::before {
     content: "";
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(245, 245, 245, 0.5); 
+    background-color: rgba(245, 245, 245, 0.5);
     z-index: -1;
-}
+  }
 
-.container {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    gap: 20px;
-    padding: 20px;
-    min-height: 100vh;
-}
-
-.header {
+  /* HEADER */
+  .header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-}
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #d3d3d3;
+  }
 
-.titulo {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    text-align: center;
-    margin: 0 auto;
-    transform: translateX(100px); 
-}
-
-
-.titulo h1 {
-    margin: 0;
-    font-size: 28px;
-    text-decoration: underline;
-    position: static;      
-}
-
-.titulo h2 {
-    margin: 5px 0 0 0;
-    font-size: 16px;
-    max-width: 500px;
-}
-
-
-.menu {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.menu button, .menu select {
-    padding: 5px 10px;
-    font-size: 14px;
-}
-
-.main-panel {
+  .logo-inicio {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    gap: 50px;
-}
+    gap: 15px;
+  }
 
-.medir {
-    padding: 10px 15px;
-    font-size: 16px;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.panel {
-    display: grid;
-    grid-template-columns: 60px 60px 60px;
-    grid-template-rows: 60px 60px;
-    gap: 5px;
-}
-
-.key {
+  .logo-circulo {
     width: 60px;
     height: 60px;
-    background: #fff;
-    border: 2px solid #2196f3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
+  }
+
+  .logo-circulo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .btn-inicio {
+    padding: 10px 25px;
+    background-color: white;
+    border: 2px solid #333;
     border-radius: 5px;
-    user-select: none;
-    transition: background 0.2s;
-}
-
-.key.active {
-    background: #2196f3;
-    color: #fff;
-}
-
-.key[data-key="w"] { grid-column: 2; grid-row: 1; }
-.key[data-key="a"] { grid-column: 1; grid-row: 2; }
-.key[data-key="s"] { grid-column: 2; grid-row: 3; }
-.key[data-key="d"] { grid-column: 3; grid-row: 2; }
-.key[data-key="x"] { grid-column: 2; grid-row: 2; }
-
-.key[data-key="x"]{
-    border-radius: 30px;
-}
-
-footer {
+    font-size: 16px;
+    cursor: pointer;
     display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+  }
+
+  .btn-inicio:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+  }
+
+  .titulo-central h1 {
+    font-size: 42px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #4CAF50, #2196F3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .como-funciona {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.3s;
+  }
+
+  .como-funciona:hover {
+    transform: scale(1.05);
+  }
+
+  .icono-ayuda {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    margin-top: 20px;
-}
+    font-weight: bold;
+  }
 
-.logo {
-display: flex;
-align-items: center;
-justify-content: center;
-}
+  /* CONTENEDOR PRINCIPAL */
+  .contenedor-principal {
+    display: flex;
+    height: calc(100vh - 100px);
+    padding: 20px;
+    gap: 150px;
+  }
 
-/* Contenedor general y todo acerca de los botones } */
+  /* SECCIÓN IZQUIERDA - MEDICIONES */
+  .seccion-izquierda {
+    flex: 0 0 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
 
-.opcionesdemedicion {
+  .titulo-mediciones {
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 10px;
+  }
+
+  .botonera {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .botonera button {
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    border: 6px solid;
+    font-family: Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 750;
+    cursor: pointer;
+    opacity: 0.95;
+    transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 50px;
-}
+    padding-left: 20px;
+    gap: 12px;
+    border-radius: 5px;
+  }
 
+  .botonera button::before {
+    font-size: 28px;
+  }
 
-.botonera {
-    position: absolute;
-    top: 50%;
-    left: 25px;
-    transform: translateY(-50%);
-    
+  .Sonido { border-color: #e74c3c; color: #e74c3c; }
+  .Sonido::before { content: "🔊"; }
+  
+  .TemperaturayHumedad { border-color: #2980b9; color: #2980b9; }
+  .TemperaturayHumedad::before { content: "🌡️💧"; }
+  
+  .Presion { border-color: #b31cc7; color: #b31cc7; }
+  .Presion::before { content: "⏱️"; }
+  
+  .Luz { border-color: #f1c40f; color: #f1c40f; }
+  .Luz::before { content: "💡"; }
+
+  .Sonido:hover { background-color: #e74c3c; color: white; transform: translateX(5px); }
+  .TemperaturayHumedad:hover { background-color: #2980b9; color: white; transform: translateX(5px); }
+  .Presion:hover { background-color: #b31cc7; color: white; transform: translateX(5px); }
+  .Luz:hover { background-color: #f1c40f; color: black; transform: translateX(5px); }
+
+  .botonera button.activo {
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  }
+
+  .Sonido.activo { background-color: #e74c3c; color: white; }
+  .TemperaturayHumedad.activo { background-color: #2980b9; color: white; }
+  .Presion.activo { background-color: #b31cc7; color: white; }
+  .Luz.activo { background-color: #f1c40f; color: black; }
+
+  /* SECCIÓN DERECHA - PANEL DE CONTROL */
+  .seccion-derecha {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-}
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding-right: 100px;
+  }
 
-/* BOTÓN — versión grande y texto centrado */
-.botonera button {
+  .titulo-panel {
+    text-align: center;
+  }
+
+  .titulo-panel h2 {
+    font-size: 36px;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 10px;
+  }
+
+  .titulo-panel p {
+    font-size: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .btn-medir {
+    padding: 15px 40px;
     background-color: white;
-    border: 6px solid;
-    font-family: 'Montserrat', sans-serif;
+    border: 3px solid #2196F3;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
     cursor: pointer;
-    opacity: 0.95;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s;
+    color: #2196F3;
+  }
 
-    width: 330px;      /* ancho más grande */
-    height: 80px;      /* alto grande */
+  .btn-medir:hover {
+    background-color: #2196F3;
+    color: white;
+    transform: scale(1.05);
+  }
 
+  .controles-contenedor {
     display: flex;
     align-items: center;
-    justify-content: center; /* ✅ texto centrado */
+    gap: 40px;
+  }
 
-    font-size: 24px;   /* ✅ texto más grande */
-    font-weight: 750;  /* ✅ más grueso */
-    text-align: center;
-    
-}
+  .panel {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px;
+    gap: 10px;
+  }
 
-/* Opcional si usas <i> o <img> dentro del botón */
-.botonera button i,
-.botonera button img {
-    font-size: 22px;
-    margin-right: 12px;
-}
+  .key {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border: 3px solid #2196f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    border-radius: 8px;
+    user-select: none;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
 
-/* Colores */
-.Sonido { border-color: #e74c3c; color: #e74c3c; }
-.TemperaturayHumedad { border-color: #2980b9; color: #2980b9; }
-.Presion { border-color: #b31cc7; color: #b31cc7; }
-.Luz { border-color: #f1c40f; color: #f1c40f; }
+  .key:hover {
+    background: #e3f2fd;
+    transform: scale(1.05);
+  }
 
-/* Hover */
-.Sonido:hover { background-color: #e74c3c; color: black; }
-.TemperaturayHumedad:hover { background-color: #2980b9; color: black; }
-.Presion:hover { background-color: #b31cc7; color: black; }
-.Luz:hover { background-color: #f1c40f; color: black; }
+  .key.active {
+    background: #2196f3;
+    color: white;
+    transform: scale(0.95);
+  }
 
-/* Activo */
-.Sonido.activo, .Sonido:active { background-color: #e74c3c; color: black; }
-.TemperaturayHumedad.activo, .TemperaturayHumedad:active { background-color: #2980b9; color: black; }
-.Presion.activo, .Presion:active { background-color: #b31cc7; color: black; }
-.Luz.activo, .Luz:active { background-color: #f1c40f; color: black; }
+  .key[data-key="w"] { grid-column: 2; grid-row: 1; }
+  .key[data-key="a"] { grid-column: 1; grid-row: 2; }
+  .key[data-key="s"] { grid-column: 2; grid-row: 2; }
+  .key[data-key="d"] { grid-column: 3; grid-row: 2; }
 
-.botonera button.activo {
-    opacity: 1;
+  .btn-stop {
+    width: 110px;
+    height: 110px;
+    background: white;
+    border: 4px solid #2196f3;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    cursor: pointer;
+    transition: all 0.3s;
+    user-select: none;
+  }
+
+  .btn-stop:hover {
+    background: #ffebee;
+    border-color: #f44336;
     transform: scale(1.1);
-    box-shadow: 0 0 10px rgba(0,0,0,0.25);
-}
+  }
+
+  .btn-stop.active {
+    background: #f44336;
+    color: white;
+    transform: scale(0.95);
+  }
+
+  /* FOOTER LOGO */
+  .footer-logo {
+    display: none;
+  }

@@ -15,24 +15,22 @@ port.on("open",()=>{
 function enviarAArduino(mandar){
     port.write(mandar.toString() + "\n")
 }; // Enviar info al arduino
- function medicion(Tipo){
-  if (Tipo === "humedad") {
-    enviarAArduino("RH")
-  }
-  if (Tipo === "temperatura") {
-    enviarAArduino("RT")
-  }
 
-  if (Tipo === "luz") {
-    enviarAArduino("RL")
+
+function medicion(Tipo) {
+  if (Tipo === "humedad") {
+    enviarAArduino("RH");
+  } else if (Tipo === "temperatura") {
+    enviarAArduino("RT");
+  } else if (Tipo === "luz") {
+    enviarAArduino("RL");
+  } else if (Tipo === "sonido") {
+    enviarAArduino("RM");
+  } else {
+    console.log("error");
   }
-  if (Tipo === "sonido") {
-    enviarAArduino("RM")
-  }
-  else {
-    console.log("error")
-  };
- };
+}
+
 
  function movimiento(direccion){
   if (direccion === "adelante") {

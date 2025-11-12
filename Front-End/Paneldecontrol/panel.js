@@ -3,35 +3,48 @@ document.getElementById("volver").addEventListener("click", () => {
   window.location.href = "../Pantalladeinicio/HTMLPANTALLADEINICIO.html";
 });
 
+document.getElementById("como-funciona").addEventListener("click", () => {
+  window.location.href = "../tutorial/tutorial.html";
+});
+
 // Teclas WASD + freno "X"
 document.addEventListener("keydown", (e) => {
   const t = e.key.toLowerCase();
-  if (t === "w") postEvent("movimiento", "adelante");
-  if (t === "s") postEvent("movimiento", "atras");
-  if (t === "a") postEvent("movimiento", "izquierda");
-  if (t === "d") postEvent("movimiento", "derecha");
-  if (t === "x") postEvent("movimiento", "frenar");
+  if (t === "w") console.log("Adelante");
+  if (t === "s") console.log("Atrás");
+  if (t === "a") console.log("Izquierda");
+  if (t === "d") console.log("Derecha");
+  if (t === "x") console.log("Frenar");
 });
-
 
 // Colorear teclas al presionar
 document.addEventListener("keydown", (e) => {
   const t = e.key.toLowerCase();
-  const keyDiv = document.querySelector(`.key[data-key="${t}"]`);
-  if (keyDiv) keyDiv.classList.add("active");
+  const keyDiv = document.querySelector(`.key[data-key="${t}"], .btn-stop[data-key="${t}"]`);
+  if (keyDiv && !keyDiv.classList.contains("active")) {
+    keyDiv.classList.add("active");
+  }
 });
 
 // Sacar color al soltar
 document.addEventListener("keyup", (e) => {
   const t = e.key.toLowerCase();
-  const keyDiv = document.querySelector(`.key[data-key="${t}"]`);
+  const keyDiv = document.querySelector(`.key[data-key="${t}"], .btn-stop[data-key="${t}"]`);
   if (keyDiv) keyDiv.classList.remove("active");
 });
 
+// Click en teclas
+document.querySelectorAll(".key, .btn-stop").forEach(key => {
+  key.addEventListener("click", () => {
+    const tecla = key.getAttribute("data-key");
+    console.log("Click en tecla:", tecla);
+    key.classList.add("active");
+    setTimeout(() => key.classList.remove("active"), 200);
+  });
+});
 
 // Selección de sensores (solo uno activo)
 const sensores = document.querySelectorAll(".botonera button");
-
 sensores.forEach(btn => {
   btn.addEventListener("click", () => {
     sensores.forEach(b => b.classList.remove("activo"));
@@ -42,33 +55,14 @@ sensores.forEach(btn => {
 // Enviar sensor al backend al medir
 document.getElementById("medir").addEventListener("click", () => {
   const activo = document.querySelector(".botonera button.activo");
-  if (!activo) return alert("Seleccioná un sensor primero");
-
-  switch (activo.id) {
-    case "Sonido":
-      postEvent("medir", "sonido");
-      break;
-    case "TemperaturayHumedad":
-      postEvent("medir", "temperatura");
-      break;
-    case "Presion":
-      postEvent("medir", "presion");
-      break;
-    case "Luz":
-      postEvent("medir", "luz");
-      break;
+  if (!activo) {
+    alert("Seleccioná un sensor primero");
+    return;
   }
 
-  // ✅ Desmarcar realmente el botón
+  console.log("Midiendo con sensor:", activo.id);
+
+  // Desmarcar el botón
   activo.classList.remove("activo");
-  activo.blur(); // ❗ saca el foco visual del botón
+  activo.blur();
 });
-
-
-// Botón volver al inicio via SoqueTIC
-document.getElementById("inicio").addEventListener("click", () => {
-  postEvent("volverInicio", {});
-});
-
-// Conexión SoqueTIC
-connect2Server();

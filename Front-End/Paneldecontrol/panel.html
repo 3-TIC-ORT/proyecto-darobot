@@ -3,53 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Panel de Control</title>
+  <title>EnviroMate - Panel de Control</title>
   <link rel="stylesheet" href="panel.css">
   <script src="panel.js" defer></script>
 </head>
 <body>
-  <div class="container">
+ <!-- HEADER -->
+ <header class="header">
+  <div class="logo-inicio">
+    <div class="logo-circulo">
+      <img src="image 1.png" alt="Logo EnviroMate">
+    </div>
+    <button id="volver" class="btn-inicio">🏠 Inicio</button>
+  </div>
+  
+  <div class="titulo-central">
+    <h1>EnviroMate</h1>
+  </div>
+  
+  <div id="como-funciona" class="como-funciona">
+    <span>Como funciona</span>
+    <div class="icono-ayuda">?</div>
+  </div>
+</header>
 
-    <header class="header">
-      <div class="titulo">
-        <h1>Panel de control</h1>
-        <h2>En esta sección vas a poder controlar a tu robot, elegir para dónde se mueve y cuándo medir.</h2>
-      </div>
-      <div class="menu">
-        <button id="volver">🏠️ Volver a inicio</button>
-      </div>
-    </header>
+<!-- CONTENEDOR PRINCIPAL -->
+<div class="contenedor-principal">
+  
+  <!-- SECCIÓN IZQUIERDA - MEDICIONES -->
+  <aside class="seccion-izquierda">
+    <h2 class="titulo-mediciones">Ir a mediciones</h2>
+    <div class="botonera">
+      <button id="Sonido" class="Sonido">Sonido</button>
+      <button id="TemperaturayHumedad" class="TemperaturayHumedad">Temperatura<br>y humedad</button>
+      <button id="Presion" class="Presion">Presión</button>
+      <button id="Luz" class="Luz">Luz</button>
+    </div>
+  </aside>
 
-    <main class="main-panel">
-      
-      <div class="medir">
-        <button id="medir" class="medir">Empezar a medir</button>
-      </div>
+  <!-- SECCIÓN DERECHA - PANEL DE CONTROL -->
+  <main class="seccion-derecha">
+    <div class="titulo-panel">
+      <h2>Panel de control</h2>
+      <p>En esta sección vas a poder controlar a tu robot, elegir para dónde se mueve y cuándo medir.</p>
+    </div>
 
+    <button id="medir" class="btn-medir">Empezar a medir</button>
+
+    <div class="controles-contenedor">
       <div class="panel">
         <div id="w" class="key" data-key="w">↑</div>
         <div id="a" class="key" data-key="a">←</div>
         <div id="s" class="key" data-key="s">↓</div>
         <div id="d" class="key" data-key="d">→</div>
-        <div id="x" class="key" data-key="x">⛔</div>
       </div>
-    </main>
 
-    <main class="opcionesdemedicion">
-      <div class="botonera">
-        <button id="Sonido" class="Sonido">Sonido</button>
-        <button id="TemperaturayHumedad" class="TemperaturayHumedad">Temperatura y Humedad</button>
-        <button id="Presion" class="Presion">Presión</button>
-        <button id="Luz" class="Luz">Luz</button>
-      </div>
-      </main>
+      <div id="x" class="btn-stop" data-key="x">⊝</div>
+    </div>
+  </main>
+</div>
 
-
-
-    <img src="image 1.png" alt="Logo ENVIRO" class="logo">
-  
-  
-
+<!-- FOOTER LOGO -->
+<footer class="footer-logo">
+</footer>
 
 </body>
 </html>
