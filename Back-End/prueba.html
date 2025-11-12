@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Dashboard del Robot Ambiental</title>
+
+    <!-- Scripts de SoqueTIC (esenciales para la comunicación) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/JZylber/SoqueTIC-Client@v1.4.2/soquetic-client.js"></script>
+
+    <script defer src="Pruebafront.js"></script>
+</head>
+<body>
+    <main>
+        <h1>Mediciones Ambientales (Tiempo Real)</h1>
+
+        <!-- ELEMENTOS DE VISUALIZACIÓN -->
+        <!-- Usaremos IDs que coincidan con los prefijos que el backend recibe (RT, RH, RL, RM) -->
+        <p>Temperatura: <span id="RT">--</span> °C</p>
+        <p>Humedad: <span id="RH">--</span> %</p>
+        <p>Intensidad de Luz: <span id="RL">--</span> lux</p>
+        <p>Nivel de Ruido: <span id="RM">--</span> dB</p>
+
+        <hr>
+
+        <h2>Control de Movimiento (POST)</h2>
+        <button onclick="enviarMovimiento('adelante')">Adelante (W)</button>
+        <button onclick="enviarMovimiento('atras')">Atrás (S)</button>
+        <button onclick="enviarMovimiento('izquierda')">Izquierda (A)</button>
+        <button onclick="enviarMovimiento('derecha')">Derecha (D)</button>
+        <button onclick="enviarMovimiento('frenar')">Frenar (X)</button>
+
+        <hr>
+
+        <h2>Solicitud de Medición (POST)</h2>
+        <button onclick="solicitarMedicion('temperatura')">Pedir Temperatura (RT)</button>
+        <button onclick="solicitarMedicion('humedad')">Pedir Humedad (RH)</button>
+
+    </main>
+</body>
+</html>

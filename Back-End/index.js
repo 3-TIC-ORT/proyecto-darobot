@@ -61,7 +61,7 @@ lectura.on('data', (data) => {
   let tipo = data.substring(0, 2);
   let valor = data.substring(2, );
   realTimeEvent("grafico", {tipo,valor});
-  let devoluciones = JSON.parse(fs.readFileSync("datos.json", "utf-8"));
+  let devoluciones = JSON.parse(fs.readFileSync("datosprueba.json", "utf-8"));
       devoluciones.push({tipo, valor})
     let devolucion = JSON.stringify(devoluciones, null, 2);
     fs.writeFileSync("datos.json", devolucion);
