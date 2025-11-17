@@ -4,191 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EnviroMate - ¿Cómo funciona?</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
-    min-height: 100vh;
-    margin: 0;  /* elimina espacio exterior */
-    padding: 0; /* elimina espacio interior */
-}
-
-
-.header {
-    width: 100vw; /* 100% del ancho de la pantalla */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 25px;
-    background: #e0e0e0;
-    border-radius: 0;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    margin: 0; /* elimina margen */
-}
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-icon {
-            width: 35px;
-            height: 35px;
-            background: #4CAF50;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-        }
-
-        .menu-btn {
-            background: white;
-            border: 2px solid #ddd;
-            padding: 8px 16px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        .settings {
-            background: white;
-            border: 2px solid #ddd;
-            width: 35px;
-            height: 35px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-
-        .main-title {
-    text-align: center;
-    font-size: 10em;
-    font-weight: 700;
-    margin-bottom: 100px;
-}
-
-        .enviro {
-            color: #57A37B;
-        }
-
-        .mate {
-            color: #00487B;
-        }
-
-        .subtitle {
-    text-align: center;
-    color: #333;
-    font-size: 3em; /* más grande */
-    margin-top: -70px; /* acerca al H1 */
-    margin-bottom: 40px;
-    font-weight: 500;
-}
-
-
-        .cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* antes decía 280px */
-    gap: 30px;
-    max-width: 1300px;
-    margin: 0 auto;
-}
-
-        .card {
-    background: white;
-    border-radius: 16px;
-    padding: 40px; /* más espacio interno */
-    min-height: 180px; /* más alto */
-    width: 100%;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-
-        .card-title {
-    color: #000000;
-    font-size: 1.2em; /* más grande */
-    line-height: 1.8; /* más espacio entre líneas */
-    font-weight: 600;
-
-}
-
-        .card-text {
-            color: #555;
-            line-height: 1.6;
-            font-size: 0.95em;
-        }
-
-        .highlight {
-            color: #000000;
-            font-weight: 600;
-        }
-
-        @media (max-width: 768px) {
-            .main-title {
-                font-size: 2em;
-            }
-            
-            .subtitle {
-                font-size: 1.1em;
-            }
-
-            .cards-container {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="tutorial.css" />
 </head>
 <body>
-    <div class="header">
-        <div class="logo">
-            <div class="logo-icon">
 
-            
-            
-            </div>
-            <button class="menu-btn" onclick="window.location.href='../Pantalladeinicio/HTMLPANTALLADEINICIO.html'">
-                ☰ Menú
-            </button>
-        </div>
-        <div style="display: flex; gap: 10px; align-items: center;">
-            <span style="font-size: 14px; color: #666;">¿Como funciona?</span>
-        </div>
+<header class="encabezado">
+    <div class="header-left">
+        <img src="loguito2.png" class="logo-encabezado" alt="Logo">
+
+        <a href="../Pantalladeinicio/HTMLPANTALLADEINICIO.html" class="boton-inicio">
+            <span class="icono-casa">🏠</span>
+            <span>Inicio</span>
+        </a>
     </div>
 
-    <h1 class="main-title"><span class="enviro">Enviro</span><span class="mate">Mate</span></h1>
-    <h2 class="subtitle">¿Cómo funciona?</h2>
-
-    <div class="cards-container">
-        <div class="card">
-            <div class="card-title">EnviroMate es un robot medidor de ambientes, este te acompaña y te ayuda etc. </div>
-        </div>
-
-        <div class="card">
-            <div class="card-title">En <span class="highlight">mediciones</span> vas a poder ver la medicion que se hizo durante el dia de la funcion que quieras </div>
-        </div>
-
-        <div class="card">
-            <div class="card-title">En <span class="highlight"> panel de control vas a  poder controlar a tu robot y elegir que sensor activar o que medir</span> podes</div>
-        </div>
+    <div class="header-right">
+        <a href="#" class="como-texto">¿Cómo funciona?</a>
+        <div class="icono-ayuda">?</div>
     </div>
+</header>
+
+<h1 class="main-title"><span class="enviro">Enviro</span><span class="mate">Mate</span></h1>
+<h2 class="subtitle">¿Cómo funciona?</h2>
+
+<div class="cards-container">
+    <div class="card">
+        <div class="card-title">EnviroMate es un robot medidor de ambientes, este te acompaña y te ayuda etc.</div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">En <span class="highlight">mediciones</span> vas a poder ver la medición que se hizo durante el día de la función que quieras.</div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">En <span class="highlight">panel de control</span> vas a poder controlar a tu robot y elegir qué sensor activar o qué medir.</div>
+    </div>
+</div>
+
 </body>
 </html>

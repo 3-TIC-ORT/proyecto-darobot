@@ -6,84 +6,109 @@
     align-items: center;
     background-color: #cac8c3;
     height: 70px;
-  }
+    position: relative;
+}
 
-  .contenedor-botones {
+.header-left {
     position: absolute;
-    top: 55%;              
-    left: 20px;            
+    top: 50%;
+    left: 20px;
     transform: translateY(-50%);
     display: flex;
-    flex-direction: column; /* mantiene la columna */
-    gap: 20px;              /* espacio entre los botones */
+    align-items: center;
+    gap: 10px;
+}
+
+.header-left .logo {
+    height: 40px;
+}
+
+.boton-inicio {
+    position: absolute;
+    left: 120px;       /* mueve el botón a la derecha del logo */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background-color: white;
+    border: 2px solid #7dc5ff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+    transition: 0.2s;
 }
 
 
-/* Aplica a ambos botones dentro del contenedor */
+.icono-casa {
+    font-size: 20px;
+}
+
+.boton-inicio:hover {
+    background-color: #7dc5ff;
+    color: white;
+}
+
+.contenedor-botones {
+    position: absolute;
+    top: 55%;
+    left: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .contenedor-botones button {
-    width: 400px;       /* ancho del botón, cambia a tu gusto */
-    height: 70px;      /* alto del botón, cambia a tu gusto */
-    font-size: 24px;    /* tamaño del texto */
-    background-color: #ffffff; /* color de ejemplo */
+    width: 400px;
+    height: 70px;
+    font-size: 24px;
+    background-color: #ffffff;
     color: rgb(0, 0, 0);
     border: 10px solid #7DC5FF;
     border-radius: 0px;
     cursor: pointer;
 }
 
-
-
-
 .contenedor-botones button:hover,
 .contenedor-botones button:active {
-    background-color: #7DC5FF; /* celeste */
-    color: white;              /* texto blanco para contraste */
-    cursor: pointer;           /* cambia el puntero a mano */
+    background-color: #7DC5FF;
+    color: white;
+    cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
 
 .grande{
     font-family: 'Montserrat', sans-serif;
     font-size: 120px;
     position: absolute;
-    top: 30px;              /* margen desde arriba */
-    left: 50%;              /* punto medio horizontal */
-    transform: translateX(-50%); /* centra horizontalmente */
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
     margin: 0;
 }
+
 .verde {
-    color: #57A37B; /* verde */
-  }
- 
-  .azul {
-    color: #00487B; /* azul */
-  }
+    color: #57A37B;
+}
 
-
-
+.azul {
+    color: #00487B;
+}
 
 .parrafo{
     position: absolute;
-    top: 50%;                /* centrado vertical */
-    right: 150px;            /* margen desde el borde derecho */
-    transform: translateY(-50%); /* corrige el centrado vertical */
-    text-align: right;       /* alinea el texto a la derecha */
-    width: 350px;        /* opcional: limita el ancho del párrafo */
+    top: 55%;
+    right: 50px;
+    transform: translateY(-50%);
+    text-align: left;
+    width: 350px;
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
 }
-
-
-
 
 html, body {
     margin: 0;
@@ -92,36 +117,50 @@ html, body {
     overflow: hidden;
 }
 
-
 body {
     background-image: url("modern-clean-white-background-free-vector 1 - copia.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
-
 }
- 
-    .logo {
-        position: absolute;
-        top: 55%;
-        left: 47%;
-        transform: translate(-50%, -50%); /* centra exacto en ambos ejes */
-        width: 250px;  /* opcional */
-        height: auto;  /*  proporciones */
-       }
- 
-       .link {
-        position: absolute;
-        top: 25px;     /* distancia desde arriba */
-        right: 10px;   /* distancia desde la derecha */
-        text-decoration: none;
-        color: black;
-        cursor: pointer;
-        font-family: 'Montserrat', sans-serif;
-      }
-      
-      .link:hover {
-        text-decoration: underline;
-      }
-      
+
+.logo {
+    position: absolute;
+    top: 55%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: auto;
+} 
+
+.como-funciona {
+    position: absolute;
+    top: 25px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.como-funciona .texto {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+.como-funciona .texto:hover {
+    text-decoration: underline;
+}
+
+.icono-ayuda {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+}

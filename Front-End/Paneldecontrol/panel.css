@@ -7,11 +7,14 @@
   body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: url('image 2.png') no-repeat center center fixed;
+    background-image: url("images\ 2.png");
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: #222;
     min-height: 100vh;
     position: relative;
+    overflow: hidden;
   }
   
 
@@ -73,11 +76,15 @@
   .titulo-central h1 {
     font-size: 42px;
     font-weight: bold;
-    background: linear-gradient(90deg, #4CAF50, #2196F3);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
   }
+
+  .enviro {
+    color: #00487B; /* Azul */
+}
+
+.mate {
+    color: #57A37B; /* Verde */
+}
 
   .como-funciona {
     display: flex;
@@ -89,7 +96,8 @@
   }
 
   .como-funciona:hover {
-    transform: scale(1.05);
+    text-decoration: underline;
+
   }
 
   .icono-ayuda {
@@ -120,25 +128,31 @@
   }
 
   .titulo-mediciones {
-    font-size: 28px;
+    font-size: 35px;
     font-weight: bold;
     text-decoration: underline;
     margin-bottom: 10px;
-  }
+    color: black;
+    position: relative;
+    left: 85px;   
+    top: 80px;    
+}
+
 
   .botonera {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    margin-top: 100px;
   }
 
   .botonera button {
     width: 100%;
-    height: 100px;
+    height: 120px;
     background-color: white;
-    border: 6px solid;
+    border: 8px solid;
     font-family: Arial, sans-serif;
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 750;
     cursor: pointer;
     opacity: 0.95;
@@ -146,9 +160,10 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding-left: 20px;
-    gap: 12px;
-    border-radius: 5px;
+    padding-left: 25px;
+    gap: 15px;
+    border-radius: 8px;
+    margin-left: 5%;
   }
 
   .botonera button::before {
@@ -196,17 +211,18 @@
 
   .titulo-panel {
     text-align: center;
+     margin-top: -100px;
   }
 
   .titulo-panel h2 {
-    font-size: 36px;
+    font-size: 60px;
     font-weight: bold;
     text-decoration: underline;
     margin-bottom: 10px;
   }
 
   .titulo-panel p {
-    font-size: 16px;
+    font-size: 25px;
     max-width: 600px;
     margin: 0 auto;
   }
@@ -233,18 +249,19 @@
     display: flex;
     align-items: center;
     gap: 40px;
+    margin-left: 165px;
   }
 
   .panel {
     display: grid;
-    grid-template-columns: 100px 100px 100px;
-    grid-template-rows: 100px 100px;
+    grid-template-columns: 120px 120px 120px;
+    grid-template-rows: 120px 120px;
     gap: 10px;
   }
 
   .key {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     background: white;
     border: 3px solid #2196f3;
     display: flex;
@@ -274,11 +291,11 @@
   .key[data-key="d"] { grid-column: 3; grid-row: 2; }
 
   .btn-stop {
-    width: 110px;
-    height: 110px;
+    width: 130px;
+    height: 130px;
     background: white;
     border: 4px solid #2196f3;
-    border-radius: 50%;
+    border-radius: 45%;
     display: flex;
     justify-content: center;
     align-items: center;
