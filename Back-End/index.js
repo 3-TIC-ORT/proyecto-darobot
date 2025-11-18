@@ -3,7 +3,7 @@ import { subscribeGETEvent, subscribePOSTEvent, realTimeEvent, startServer } fro
 import fs from "fs";
 // Create a port
 const port = new SerialPort({
-  path: 'COM3',
+  path: 'COM5',
   baudRate: 9600,
 });
  
@@ -17,7 +17,7 @@ function enviarAArduino(mandar){
 }; // Enviar info al arduino
 
 
-function medicion(Tipo) {
+function medicion({Tipo}) {
   if (Tipo === "humedad") {
     enviarAArduino("RH");
   } else if (Tipo === "temperatura") {
@@ -32,7 +32,7 @@ function medicion(Tipo) {
 }
 
 
- function movimiento(direccion){
+ function movimiento({direccion}){
   if (direccion === "adelante") {
     enviarAArduino("W")
   }
@@ -64,15 +64,15 @@ lectura.on('data', (data) => {
   let devoluciones = JSON.parse(fs.readFileSync("datosprueba.json", "utf-8"));
       devoluciones.push({tipo, valor})
     let devolucion = JSON.stringify(devoluciones, null, 2);
-    fs.writeFileSync("datos.json", devolucion);
+    fs.writeFileSync("datosprueba.json", devolucion);
    return {ok:true};
 });
 
 
 startServer()
 
-//Hacer front de prueba cargando la documentacion de soquetic en chatgpt.
-//Usar el front de la demo de arduino para verificar que ande.
-//Cambiar el JSON donde se guardan los datos (datosprueba.json ---> datos.json)
 
+
+//Cambiar el JSON donde se guardan los datos (datosprueba.json ---> datos.json)
+//Probar con el arduino posta 
  
