@@ -135,7 +135,7 @@
     color: black;
     position: relative;
     left: 85px;   
-    top: 80px;    
+    top: 30px;    
 }
 
 
@@ -143,12 +143,12 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin-top: 100px;
+    margin-top: 10px;
   }
 
   .botonera button {
     width: 100%;
-    height: 120px;
+    height: 100px;
     background-color: white;
     border: 8px solid;
     font-family: Arial, sans-serif;
@@ -182,9 +182,9 @@
   .Luz { border-color: #f1c40f; color: #f1c40f; }
   .Luz::before { content: "💡"; }
 
-  .Sonido:hover { background-color: #e74c3c; color: white; transform: translateX(5px); }
-  .TemperaturayHumedad:hover { background-color: #2980b9; color: white; transform: translateX(5px); }
-  .Presion:hover { background-color: #b31cc7; color: white; transform: translateX(5px); }
+  .Sonido:hover { background-color: #e74c3c; color: rgb(0, 0, 0); transform: translateX(5px); }
+  .TemperaturayHumedad:hover { background-color: #2980b9; color: rgb(0, 0, 0); transform: translateX(5px); }
+  .Presion:hover { background-color: #b31cc7; color: rgb(0, 0, 0); transform: translateX(5px); }
   .Luz:hover { background-color: #f1c40f; color: black; transform: translateX(5px); }
 
   .botonera button.activo {
@@ -193,9 +193,9 @@
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
   }
 
-  .Sonido.activo { background-color: #e74c3c; color: white; }
-  .TemperaturayHumedad.activo { background-color: #2980b9; color: white; }
-  .Presion.activo { background-color: #b31cc7; color: white; }
+  .Sonido.activo { background-color: #e74c3c; color: rgb(0, 0, 0); }
+  .TemperaturayHumedad.activo { background-color: #2980b9; color: rgb(0, 0, 0); }
+  .Presion.activo { background-color: #b31cc7; color: rgb(0, 0, 0); }
   .Luz.activo { background-color: #f1c40f; color: black; }
 
   /* SECCIÓN DERECHA - PANEL DE CONTROL */
@@ -211,18 +211,18 @@
 
   .titulo-panel {
     text-align: center;
-     margin-top: -100px;
+     margin-top: -30px;
   }
 
   .titulo-panel h2 {
-    font-size: 60px;
+    font-size: 40px;
     font-weight: bold;
     text-decoration: underline;
     margin-bottom: 10px;
   }
 
   .titulo-panel p {
-    font-size: 25px;
+    font-size: 20px;
     max-width: 600px;
     margin: 0 auto;
   }
@@ -254,14 +254,14 @@
 
   .panel {
     display: grid;
-    grid-template-columns: 120px 120px 120px;
-    grid-template-rows: 120px 120px;
+    grid-template-columns: 110px 110px 110px;
+    grid-template-rows: 110px 110px;
     gap: 10px;
   }
 
   .key {
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     background: white;
     border: 3px solid #2196f3;
     display: flex;
