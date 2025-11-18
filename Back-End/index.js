@@ -64,7 +64,7 @@ lectura.on('data', (data) => {
   let devoluciones = JSON.parse(fs.readFileSync("datosprueba.json", "utf-8"));
       devoluciones.push({tipo, valor})
     let devolucion = JSON.stringify(devoluciones, null, 2);
-    fs.writeFileSync("datos.json", devolucion);
+    fs.writeFileSync("datosprueba.json", devolucion);
    return {ok:true};
 });
 
