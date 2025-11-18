@@ -1,16 +1,106 @@
 html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+  background-color: #d3d3d3;
+  position: relative;
+  z-index: 1000;
+  height: 60px;
+}
+
+.logo-inicio {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-circulo {
+  width: 60px;
+  height: 60px;
+}
+
+.logo-circulo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.btn-inicio {
+  padding: 10px 25px;
+  background-color: white;
+  border: 2px solid #333;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s;
+  text-decoration: none; /* Para que sea enlace */
+  color: black; /* Color del texto */
+}
+
+.btn-inicio:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+  text-decoration: underline; /* Subrayado en hover */
+  text-decoration-color: black; /* Color negro del subrayado */
+}
+
+.titulo-central h1 {
+  font-size: 42px;
+  font-weight: bold;
+}
+
+.enviro-text {
+  color: #57A37B; /* Verde */
+}
+
+.mate-text {
+  color: #00487B; /* Azul */
+}
+
+.como-funciona {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.3s;
+  color: black; /* Asegurar color negro */
+}
+
+.como-funciona:hover {
+  text-decoration: underline;
+  text-decoration-color: black; /* Color negro del subrayado */
+  color: black; /* Mantener color negro en hover */
+}
+
+.icono-ayuda {
+  width: 25px;
+  height: 25px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
 }
 
 #chartContainer {
   position: absolute;
-  top: 60px;           /* Cambia este valor para mover verticalmente */
-  left: 485px;         /* Cambia este valor para mover horizontalmente */
-  height: 575px;       /* Cambia el alto */
-  width: 900px;        /* Cambia el ancho */
+  top: 77px;
+  left: 450px;
+  height: 570px;
+  width: 950px;
   z-index: 100;
 }
 
@@ -20,8 +110,9 @@ body {
   background: url("modern-clean-white-background-free-vector 1.png") no-repeat center center fixed;
   background-size: cover;
   overflow: hidden;
+}
 
-  #inicio {
+#inicio {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -32,48 +123,104 @@ body {
   border-radius: 8px;
   cursor: pointer;
 }
+
 #inicio:hover {
   background-color: #0056b3;
-}
-
 }
 
 .opcionesdemedicion {
   position: fixed;
   left: 20px;
-  top: 50%;
+  top: 55%;
   transform: translateY(-50%);
   z-index: 1000;
+}
+
+/* TEXTO "IR A PANEL DE CONTROL" */
+.titulo-mediciones {
+  font-size: 30px; /* Tamaño aumentado */
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  border-bottom: 3px solid black;
+  padding-bottom: 8px;
+  width: fit-content;
+  
+  /* Posicionamiento absoluto para no afectar el flujo */
+  position: absolute;
+  left: 50px;   /* Posición horizontal */
+  top: 5px;   /* Posición vertical desde arriba */
+  z-index: 1001;
+}
+
+.titulo-mediciones:hover {
+  color: #000000; /* Color verde al hacer hover */
+  border-bottom-color: #000000; /* Subrayado verde al hover */
 }
 
 .botonera {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;    /* Alineados a la izquierda */
+  align-items: flex-start;
   gap: 15px;
+  
+  /* Mover la botonera completa para dar espacio al título */
+  margin-top: 70px; /* Espacio para el título */
 }
 
+/* Estilos iguales a la otra página */
 .botonera button {
-  width: 200px;
-  padding: 12px 20px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 8px;
+  width: 90%;
+  height: 95px;
+  background-color: white;
+  border: 6px solid;
+  font-family: Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 750;
   cursor: pointer;
-  text-align: left;
-}
-
-.botonera button:hover {
-  background-color: #0056b3;
-}
-
-.botonera button.activo {
-  background-color: #004085;
-  font-weight: bold;
+  opacity: 0.95;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 20px;
+  gap: 12px;
+  border-radius: 5px;
 }
 
 .botonera button::before {
   font-size: 28px;
 }
+
+/* Colores específicos para cada botón */
+.Sonido { border-color: #e74c3c; color: #e74c3c; }
+.Sonido::before { content: "🔊"; }
+
+.TemperaturayHumedad { border-color: #2980b9; color: #2980b9; }
+.TemperaturayHumedad::before { content: "🌡️💧"; }
+
+.Presion { border-color: #b31cc7; color: #b31cc7; }
+.Presion::before { content: "⏱️"; }
+
+.Luz { border-color: #f1c40f; color: #f1c40f; }
+.Luz::before { content: "💡"; }
+
+/* Efectos hover */
+.Sonido:hover { background-color: #e74c3c; color: rgb(0, 0, 0); transform: translateX(5px); }
+.TemperaturayHumedad:hover { background-color: #2980b9; color: rgb(0, 0, 0); transform: translateX(5px); }
+.Presion:hover { background-color: #b31cc7; color: rgb(0, 0, 0); transform: translateX(5px); }
+.Luz:hover { background-color: #f1c40f; color: black; transform: translateX(5px); }
+
+/* Estado activo */
+.botonera button.activo {
+  opacity: 1;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.Sonido.activo { background-color: #e74c3c; color: rgb(0, 0, 0); }
+.TemperaturayHumedad.activo { background-color: #2980b9; color: rgb(0, 0, 0); }
+.Presion.activo { background-color: #b31cc7; color: rgb(0, 0, 0); }
+.Luz.activo { background-color: #f1c40f; color: black; }
