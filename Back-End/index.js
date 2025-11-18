@@ -3,7 +3,7 @@ import { subscribeGETEvent, subscribePOSTEvent, realTimeEvent, startServer } fro
 import fs from "fs";
 // Create a port
 const port = new SerialPort({
-  path: 'COM3',
+  path: 'COM5',
   baudRate: 9600,
 });
  
@@ -17,7 +17,7 @@ function enviarAArduino(mandar){
 }; // Enviar info al arduino
 
 
-function medicion(Tipo) {
+function medicion({Tipo}) {
   if (Tipo === "humedad") {
     enviarAArduino("RH");
   } else if (Tipo === "temperatura") {
@@ -32,7 +32,7 @@ function medicion(Tipo) {
 }
 
 
- function movimiento(direccion){
+ function movimiento({direccion}){
   if (direccion === "adelante") {
     enviarAArduino("W")
   }
