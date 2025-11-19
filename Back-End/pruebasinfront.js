@@ -3,13 +3,13 @@ import { subscribeGETEvent, subscribePOSTEvent, realTimeEvent, startServer } fro
 import fs from "fs";
 // Create a port
 const port = new SerialPort({
-  path: 'COM5',
+  path: 'COM4',
   baudRate: 9600,
 });
  
 port.on("open",()=>{
     console.log("Hola")
-    setInterval(() => enviarAArduino("RL25"),1000)
+    setInterval(() => enviarAArduino("RL"),1000)
 });
 
 //Conexion con Hardware
@@ -49,6 +49,7 @@ function enviarAArduino(mandar){
   if (direccion === "izquierda") {
     enviarAArduino("A")
   }
+
   else {
     console.log("error")
   };

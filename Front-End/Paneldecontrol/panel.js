@@ -1,3 +1,4 @@
+connect2server()
 // Botón volver
 document.getElementById("volver").addEventListener("click", () => {
   window.location.href = "../Pantalladeinicio/HTMLPANTALLADEINICIO.html";
@@ -10,11 +11,11 @@ document.getElementById("como-funciona").addEventListener("click", () => {
 // Teclas WASD + freno "X"
 document.addEventListener("keydown", (e) => {
   const t = e.key.toLowerCase();
-  if (t === "w") console.log("Adelante");
-  if (t === "s") console.log("Atrás");
-  if (t === "a") console.log("Izquierda");
-  if (t === "d") console.log("Derecha");
-  if (t === "x") console.log("Frenar");
+  if (t === "w") postEvent("movimiento", "adelante");
+  if (t === "s") postEvent("movimiento" ,"atrás");
+  if (t === "a") postEvent("movimiento" ,"izquierda");
+  if (t === "d") postEvent("movimiento" ,"derecha");
+  if (t === "x") postEvent("movimiento" ,"frenar");
 });
 
 // Colorear teclas al presionar
