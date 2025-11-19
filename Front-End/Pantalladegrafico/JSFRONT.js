@@ -79,8 +79,33 @@ window.onload = function () {
         const opcion = select.value;
         if (opcion === "vacio") {
             container.innerHTML = "";
+            let chartVacio = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                theme: "light2",
+                title: { text: "Gráfico vacío", fontSize: 20 },
+        
+                axisX: {
+                    title: "Eje X",
+                    interval: 1
+                },
+                axisY: {
+                    title: "Eje Y",
+                    minimum: 0,   // IMPORTANTE: define rango
+                    maximum: 10    // IMPORTANTE: define rango
+                },
+        
+                data: [{
+                    type: "line",
+                    lineThickness: 0,
+                    markerSize: 0,
+                    dataPoints: []   // AHORA puede estar vacío
+                }]
+            });
+        
+            chartVacio.render();
             return;
         }
+        
         container.innerHTML = "";
         chart = new CanvasJS.Chart("chartContainer", chartBaseConfig("Datos de " + opcion));
         let series = [];
