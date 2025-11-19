@@ -68,7 +68,7 @@ window.onload = function () {
         let chartVacio = new CanvasJS.Chart("chartContainer", {
             animationEnabled: true,
             theme: "light2",
-            title: { text: "Gráfico vacío", fontSize: 20 },
+            title: { text: "Gráfico", fontSize: 20 },
             axisX: {
                 title: "Eje X",
                 interval: 1
