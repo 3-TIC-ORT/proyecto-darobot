@@ -44,15 +44,15 @@ html, body {
   align-items: center;
   gap: 8px;
   transition: all 0.3s;
-  text-decoration: none; /* Para que sea enlace */
-  color: black; /* Color del texto */
+  text-decoration: none;
+  color: black;
 }
 
 .btn-inicio:hover {
   background-color: #f0f0f0;
   transform: translateY(-2px);
-  text-decoration: underline; /* Subrayado en hover */
-  text-decoration-color: black; /* Color negro del subrayado */
+  text-decoration: underline;
+  text-decoration-color: black;
 }
 
 .titulo-central h1 {
@@ -61,11 +61,11 @@ html, body {
 }
 
 .enviro-text {
-  color: #57A37B; /* Verde */
+  color: #57A37B;
 }
 
 .mate-text {
-  color: #00487B; /* Azul */
+  color: #00487B;
 }
 
 .como-funciona {
@@ -75,13 +75,13 @@ html, body {
   cursor: pointer;
   font-size: 16px;
   transition: transform 0.3s;
-  color: black; /* Asegurar color negro */
+  color: black;
 }
 
 .como-funciona:hover {
   text-decoration: underline;
-  text-decoration-color: black; /* Color negro del subrayado */
-  color: black; /* Mantener color negro en hover */
+  text-decoration-color: black;
+  color: black;
 }
 
 .icono-ayuda {
@@ -136,9 +136,8 @@ body {
   z-index: 1000;
 }
 
-/* TEXTO "IR A PANEL DE CONTROL" */
 .titulo-mediciones {
-  font-size: 30px; /* Tamaño aumentado */
+  font-size: 30px;
   font-weight: bold;
   color: black;
   cursor: pointer;
@@ -147,17 +146,15 @@ body {
   border-bottom: 3px solid black;
   padding-bottom: 8px;
   width: fit-content;
-  
-  /* Posicionamiento absoluto para no afectar el flujo */
   position: absolute;
-  left: 50px;   /* Posición horizontal */
-  top: 5px;   /* Posición vertical desde arriba */
+  left: 50px;
+  top: 5px;
   z-index: 1001;
 }
 
 .titulo-mediciones:hover {
-  color: #000000; /* Color verde al hacer hover */
-  border-bottom-color: #000000; /* Subrayado verde al hover */
+  color: #000000;
+  border-bottom-color: #000000;
 }
 
 .botonera {
@@ -165,12 +162,9 @@ body {
   flex-direction: column;
   align-items: flex-start;
   gap: 15px;
-  
-  /* Mover la botonera completa para dar espacio al título */
-  margin-top: 70px; /* Espacio para el título */
+  margin-top: 70px;
 }
 
-/* Estilos iguales a la otra página */
 .botonera button {
   width: 90%;
   height: 95px;
@@ -194,7 +188,6 @@ body {
   font-size: 28px;
 }
 
-/* Colores específicos para cada botón */
 .Sonido { border-color: #e74c3c; color: #e74c3c; }
 .Sonido::before { content: "🔊"; }
 
@@ -207,13 +200,11 @@ body {
 .Luz { border-color: #f1c40f; color: #f1c40f; }
 .Luz::before { content: "💡"; }
 
-/* Efectos hover */
 .Sonido:hover { background-color: #e74c3c; color: rgb(0, 0, 0); transform: translateX(5px); }
 .TemperaturayHumedad:hover { background-color: #2980b9; color: rgb(0, 0, 0); transform: translateX(5px); }
 .Presion:hover { background-color: #b31cc7; color: rgb(0, 0, 0); transform: translateX(5px); }
 .Luz:hover { background-color: #f1c40f; color: black; transform: translateX(5px); }
 
-/* Estado activo */
 .botonera button.activo {
   opacity: 1;
   transform: scale(1.05);

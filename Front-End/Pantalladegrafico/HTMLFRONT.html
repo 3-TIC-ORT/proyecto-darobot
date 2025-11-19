@@ -9,7 +9,6 @@
     <script src="JSFRONT.js" defer></script>
     <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
     <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/JZylber/SoqueTIC-Client@v1.4.2/soquetic-client.js"></script>
 </head>
@@ -19,7 +18,8 @@
         <div class="logo-circulo">
             <img src="image 1.png" alt="Logo EnviroMate">
         </div>
-        <a href="../Pantalladeinicio/HTMLPANTALLADEINICIO.html" class="btn-inicio">🏠 Inicio</a>    </div>
+        <a href="../Pantalladeinicio/HTMLPANTALLADEINICIO.html" class="btn-inicio">🏠 Inicio</a>
+    </div>
     
     <div class="titulo-central">
       <h1><span class="enviro-text">Enviro</span><span class="mate-text">Mate</span></h1>
@@ -31,35 +31,29 @@
 </div>
 </header>
 
+<select name="Selector de Unidades" id="selectordeunidades" style="display: none;">
+    <option value="vacio"> </option>
+    <option value="Temperatura">Sensor de Temperatura</option>
+    <option value="Luz">Sensor de Luz</option>
+    <option value="Humedad">Sensor de Humedad</option>
+    <option value="Presion">Sensor de Presion</option>
+    <option value="Sonido">Sensor de Sonido</option>
+</select>
 
+<div id="contenedor"></div>
+<div id="chartContainer"></div>
+<img src="modern-clean-white-background-free-vector 1.png" alt="" class="fondo">
 
+<button id="inicio">Volver a inicio</button>
 
-
-    <select name="Selector de Unidades" id="selectordeunidades">
-        <option value="vacio"> </option>
-        <option value="Temperatura">Sensor de Temperatura</option>
-        <option value="Luz">Sensor de Luz</option>
-        <option value="Humedad">Sensor de Humedad</option>
-        <option value="Presion">Sensor de Presion</option>
-        <option value="Sonido">Sensor de Sonido</option>
-      </select>
-      
-  <div id="contenedor"></div>
-  <div id="chartContainer"></div>
-  <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-  <img src="modern-clean-white-background-free-vector 1.png" alt="" class="fondo">
-      
-  <button id="inicio">Volver a inicio</button>
-
-
-  <main class="opcionesdemedicion">
+<main class="opcionesdemedicion">
     <a href="../Paneldecontrol/panel.html" class="titulo-mediciones">Ir a panel de control</a>
     <div class="botonera">
-      <button class="Sonido">Sonido</button>
-      <button class="TemperaturayHumedad">Temperatura y Humedad</button>
-      <button class="Presion">Presión</button>
-      <button class="Luz">Luz</button>
+      <button id="buttonsonido" class="Sonido">Sonido</button>
+      <button id="buttontemp" class="TemperaturayHumedad">Temperatura y Humedad</button>
+      <button id="buttonpresion" class="Presion">Presión</button>
+      <button id="buttonluz" class="Luz">Luz</button>
     </div>
-  </main>
+</main>
 </body>
 </html>

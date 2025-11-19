@@ -62,6 +62,35 @@ window.onload = function () {
     let chart;
     const socket = io("http://localhost:3000");
 
+    // Función específica para gráfico vacío
+    function mostrarGraficoVacio() {
+        container.innerHTML = "";
+        let chartVacio = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            theme: "light2",
+            title: { text: "Gráfico vacío", fontSize: 20 },
+            axisX: {
+                title: "Eje X",
+                interval: 1
+            },
+            axisY: {
+                title: "Eje Y",
+                minimum: 0,
+                maximum: 10
+            },
+            data: [{
+                type: "line",
+                lineThickness: 0,
+                markerSize: 0,
+                dataPoints: []
+            }]
+        });
+        chartVacio.render();
+    }
+
+    // Mostrar gráfico vacío inmediatamente al cargar
+    mostrarGraficoVacio();
+
     const chartBaseConfig = (titulo) => ({
         animationEnabled: true,
         theme: "light2",
@@ -75,34 +104,21 @@ window.onload = function () {
 
     select.addEventListener("change", dibujarGrafico);
 
-    function dibujarGrafico(){
-        const opcion = select.value;
+    let botonsonido = document.getElementById("buttonsonido");
+    botonsonido.addEventListener("click", ()=> dibujarGrafico("Sonido"))
+
+    let botontemp = document.getElementById("buttontemp");
+    botontemp.addEventListener("click", ()=> dibujarGrafico("Temperatura"))
+
+    let botonpresion = document.getElementById("buttonpresion");
+    botonpresion.addEventListener("click", ()=> dibujarGrafico("Presion"))
+
+    let botonluz = document.getElementById("buttonluz");
+    botonluz.addEventListener("click", ()=> dibujarGrafico("Luz"))
+    
+    function dibujarGrafico(opcion){
         if (opcion === "vacio") {
-            container.innerHTML = "";
-            let chartVacio = new CanvasJS.Chart("chartContainer", {
-                animationEnabled: true,
-                theme: "light2",
-                title: { text: "Gráfico vacío", fontSize: 20 },
-        
-                axisX: {
-                    title: "Eje X",
-                    interval: 1
-                },
-                axisY: {
-                    title: "Eje Y",
-                    minimum: 0,   // IMPORTANTE: define rango
-                    maximum: 10    // IMPORTANTE: define rango
-                },
-        
-                data: [{
-                    type: "line",
-                    lineThickness: 0,
-                    markerSize: 0,
-                    dataPoints: []   // AHORA puede estar vacío
-                }]
-            });
-        
-            chartVacio.render();
+            mostrarGraficoVacio();
             return;
         }
         
@@ -176,12 +192,15 @@ subscribeRealTimeEvent("nuevasHumedades", (nuevasHumedades) =>{
     humedades = nuevasHumedades
     dibujarGrafico()
 })
+
 subscribeRealTimeEvent("nuevosSonidos", (nuevosSonidos) =>{
     sonidos = nuevosSonidos
     dibujarGrafico()
 })
+
 subscribeRealTimeEvent("nuevasPresiones", (nuevasPresiones) =>{
     presiones = nuevasPresiones
     dibujarGrafico()
 })
+
 connect2server();
