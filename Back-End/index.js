@@ -60,7 +60,19 @@ lectura.on('data', (data) => {
   // Aca va todo el HW
   let tipo = data.substring(0, 2);
   let valor = data.substring(2, );
-  realTimeEvent("grafico", {tipo,valor});
+  if (tipo==="RL") {
+    realTimeEvent("nuevasLuces", {tipo,valor})
+  }
+  if (tipo==="RH") {
+    realTimeEvent("nuevasHumedades", {tipo,valor})
+  }
+  if (tipo==="RM") {
+    realTimeEvent("nuevosSonidos", {tipo,valor})
+  }
+  if (tipo==="RT") {
+    realTimeEvent("nuevasTemperaturas", {tipo,valor})
+  }
+ 
   let devoluciones = JSON.parse(fs.readFileSync("datosprueba.json", "utf-8"));
       devoluciones.push({tipo, valor})
     let devolucion = JSON.stringify(devoluciones, null, 2);

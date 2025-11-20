@@ -582,5 +582,41 @@
   {
     "tipo": "RL",
     "valor": "14"
+  },
+  {
+    "tipo": "Ye",
+    "valor": "ndo para adelante"
+  },
+  {
+    "tipo": "Re",
+    "valor": "versa iniciada"
+  },
+  {
+    "tipo": "In",
+    "valor": "iciando frenado"
+  },
+  {
+    "tipo": "RM",
+    "valor": "59"
+  },
+  {
+    "tipo": "RM",
+    "valor": "60"
+  },
+  {
+    "tipo": "RT",
+    "valor": "27.40"
+  },
+  {
+    "tipo": "RT",
+    "valor": "27.30"
+  },
+  {
+    "tipo": "RM",
+    "valor": "60"
+  },
+  {
+    "tipo": "RT",
+    "valor": "27.50"
   }
 ]
