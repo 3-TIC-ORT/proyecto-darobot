@@ -102,7 +102,7 @@ document.getElementById("medir").addEventListener("click", () => {
   if (idBoton === "Sonido") {
     tipoMedicion = "sonido";
   } else if (idBoton === "TemperaturayHumedad") {
-    tipoMedicion = "temperatura"; // o "humedad" según necesites
+    tipoMedicion = "temperatura";
   } else if (idBoton === "Presion") {
     tipoMedicion = "presion";
   } else if (idBoton === "Luz") {
